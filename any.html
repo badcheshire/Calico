@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão para Todos - Saúde Visual e Acessibilidade</title>
+    <style>
+        /* Identidade visual unificada baseada exclusivamente em tons de rosa */
+        :root {
+            --bg-site: #fff5f7;
+            --cor-principal: #ff477e;   /* Rosa Shock Elegante */
+            --cor-secundaria: #ff85a2;  /* Rosa Pastel Vibrante */
+            --cor-texto: #2b1117;       /* Rosa Escuro Quase Preto para alto contraste */
+            --br-cards: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-site);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Atalho de acessibilidade oculto */
+        .atalho-leitura {
+            position: absolute;
+            top: -50px;
+            left: 10px;
+            background: var(--cor-principal);
+            color: white;
+            padding: 12px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .atalho-leitura:focus {
+            top: 10px;
+        }
+
+        /* BARRA DE NAVEGAÇÃO DO SITE (FIXA NO TOPO) */
+        nav.Menu-Site {
+            background-color: #ffffff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(255, 71, 126, 0.08);
+            z-index: 999;
+        }
+
+        .menu-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--cor-principal);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: var(--cor-principal);
+            color: white;
+            outline: none;
+        }
+
+        /* BANNER PRINCIPAL DO SITE (HERO SECTION) */
+        .hero {
+            background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria));
+            color: white;
+            padding: 120px 20px 60px 20px; /* Espaço para não cobrir o menu fixo */
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 15px 0;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        .conteudo-site {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--cor-texto);
+            border-left: 6px solid var(--cor-principal);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* GRID DO SITE (COLUNAS DE CARDS LADO A LADO) */
+        .grid-causas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card-site {
+            background-color: var(--br-cards);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(255, 71, 126, 0.04);
+            border-top: 5px solid var(--cor-principal); /* Todos os cards com o rosa do topo */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-site:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(255, 71, 126, 0.12);
+        }
+
+        .card-site h3 {
+            margin-top: 0;
+            color: var(--cor-texto);
+            font-size: 1.3rem;
+        }
+
+        .tag-info {
+            display: inline-block;
+            background-color: #ffe5ec;
+            color: var(--cor-principal); /* Tag sintonizada com a paleta */
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* SEÇÃO DE ACESSIBILIDADE TÉCNICA */
+        .box-acessibilidade {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(255, 71, 126, 0.04);
+        }
+
+        /* Links dentro do texto na cor rosa principal */
+        a.link-externo {
+            color: var(--cor-principal);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        a.link-externo:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* RODAPÉ DO SITE COM O DEGRADÊ COR-DE-ROSA DO TOPO */
+        footer {
+            background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria));
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 -4px 12px rgba(255, 71, 126, 0.05);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Link de salto para acessibilidade via teclado -->
+    <a href="#conteudo-principal" class="atalho-leitura">Pular para o conteúdo principal do site</a>
+
+    <!-- Barra de Navegação Superior -->
+    <nav class="Menu-Site" aria-label="Navegação do Portal">
+        <div class="menu-container">
+            <a href="#" class="logo">👁️ VisãoParaTodos</a>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#causas">Saúde Ocular</a></li>
+                <li><a href="#acessibilidade">Acessibilidade</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner de Entrada do Site -->
+    <header class="hero" id="inicio" role="banner">
+        <h1>Saúde Ocular & Inclusão Digital</h1>
+        <p>Descubra as principais causas da deficiência visual, suas respectivas soluções médicas e como a tecnologia atua para que a internet seja um espaço acessível a todas as pessoas.</p>
+    </header>
+
+    <!-- Conteúdo Principal do Portal -->
+    <main id="conteudo-principal" class="conteudo-site" role="main">
+       
+        <!-- Seção 1: Guia de Saúde Visual -->
+        <section id="causas">
+            <h2>Guia de Saúde Visual: Causas e Soluções</h2>
+            <p>Muitas condições afetam a qualidade da nossa visão ao longo do tempo. Conheça as quatro patologias mais comuns discutidas pela medicina atual:</p>
+
+            <!-- Grid de cartões lado a lado -->
+            <div class="grid-causas">
+               
+                <article class="card-site">
+                    <span class="tag-info">Doença Tratável</span>
+                    <h3>Catarata</h3>
+                    <p><strong>Causa:</strong> Opacidade do cristalino, funcionando como uma lente embaçada no olho.</p>
+                    <p><strong>Motivo:</strong> Processo natural de envelhecimento corporal ou traumas físicos.</p>
+                    <p><strong>Solução:</strong> Remoção cirúrgica com implante de uma nova lente intraocular artificial.</p>
+                </article>
+
+                <article class="card-site">
+                    <span class="tag-info">Requer Controle</span>
+                    <h3>Glaucoma</h3>
+                    <p><strong>Causa:</strong> Danos progressivos no nervo óptico, reduzindo a visão das bordas para o centro.</p>
+                    <p><strong>Motivo:</strong> Pressão interna elevada devido ao acúmulo de líquido ocular.</p>
+                    <p><strong>Solução:</strong> Tratamentos contínuos à base de colírios especiais, lasers ou cirurgias filtrantes.</p>
+                </article>
+
+                <article class="card-site">
+                    <span class="tag-info">Prevenção Crítica</span>
+                    <h3>Retinopatia Diabética</h3>
+                    <p><strong>Causa:</strong> Rompimento ou obstrução dos vasos sanguíneos localizados na retina.</p>
+                    <p><strong>Motivo:</strong> Níveis de glicose (açúcar) elevados no sangue de forma prolongada.</p>
+                    <p><strong>Solução:</strong> Controle clínico rigoroso da diabetes, fotocoagulação a laser ou injeções locais.</p>
+                </article>
+
+                <article class="card-site">
+                    <span class="tag-info">Correção Rápida</span>
+                    <h3>Erros de Refração</h3>
+                    <p><strong>Causa:</strong> Desfoco de objetos próximos ou distantes (Miopia e Astigmatismo severos).</p>
+                    <p><strong>Motivo:</strong> Formato anatômico ligeiramente alongado ou irregular do globo ocular.</p>
+                    <p><strong>Solução:</strong> Uso regular de óculos de grau ajustados, lentes de contato ou cirurgia refrativa.</p>
+                </article>
+
+            </div>
+
+            <p style="margin-top: 30px;">
+                Para informações médicas detalhadas, consulte o site oficial do governo
