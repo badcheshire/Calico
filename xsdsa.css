@@ -1,0 +1,155 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GLOBAIS E RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    background-color: #FFF0F5;
+    color: #4A0021;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. ACESSIBILIDADE (TECLADO E LINK DE SALTO)
+   ========================================================================== */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background-color: #FF007F;
+    color: #FFFFFF;
+    padding: 1rem;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 4px solid #4A0021;
+}
+
+main:focus {
+    outline: none;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO (HEADER)
+   ========================================================================== */
+.header {
+    background-color: #FFC0CB;
+    padding: 2.5rem 0;
+    border-bottom: 5px solid #FF69B4;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.logo-texto {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.slogan {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   4. CONTEÚDO E SEÇÕES
+   ========================================================================== */
+.section {
+    padding: 4rem 0;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.85rem; }
+h3 { font-size: 1.5rem; }
+
+/* Grid de Recursos */
+.grid-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card-recurso {
+    background-color: #FFE4E1;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 3px solid #FFB6C1;
+}
+
+.card-recurso:focus-within {
+    outline: 4px solid #4A0021;
+    outline-offset: 4px;
+}
+
+/* ==========================================================================
+   5. BOTÃO DE CHAMADA PARA AÇÃO (CTA)
+   ========================================================================== */
+.btn-download {
+    display: inline-block;
+    background-color: #D20062;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-download:focus {
+    outline: 4px solid #4A0021;
+    outline-offset: 4px;
+}
+
+.btn-download:hover {
+    background-color: #A00048;
+}
+
+.btn-download:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   6. RODAPÉ (FOOTER)
+   ========================================================================== */
+.footer {
+    background-color: #4A0021;
+    color: #FFF0F5;
+    padding: 2.5rem 0;
+    font-size: 1.1rem;
+    margin-top: 4rem;
+}
