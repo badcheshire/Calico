@@ -5,17 +5,14 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>VisãoAcolhedora | Causas</title>
 
     <link rel="stylesheet" href="style.css">
 
 </head>
-
 
 <body>
 
@@ -25,19 +22,19 @@
 
             <span>Acessibilidade:</span>
 
-            <button id="increaseFont" type="button">A+</button>
+            <button id="decreaseFont">A-</button>
 
-            <button id="decreaseFont" type="button">A-</button>
+            <button id="increaseFont">A+</button>
 
-            <button id="contrastButton" type="button">
+            <button id="contrastButton">
                 Contraste
             </button>
 
-            <button id="darkMode" type="button">
-                Modo escuro
+            <button id="darkMode">
+                Escuro
             </button>
 
-            <button id="spacingButton" type="button">
+            <button id="spacingButton">
                 Espaçamento
             </button>
 
@@ -50,31 +47,23 @@
 
         <div class="container nav-container">
 
-            <a href="index.html" class="logo">
+            <a href="index.html"
+               class="logo">
 
                 <span class="logo-icon">
+                    <svg viewBox="0 0 100 100">
 
-                    <svg viewBox="0 0 64 64">
+                        <circle cx="50"
+                                cy="50"
+                                r="38"
+                                fill="white"/>
 
-                        <ellipse
-                            cx="32"
-                            cy="32"
-                            rx="25"
-                            ry="16"
-                            fill="none"
-                            stroke="white"
-                            stroke-width="4"
-                        />
-
-                        <circle
-                            cx="32"
-                            cy="32"
-                            r="8"
-                            fill="white"
-                        />
+                        <circle cx="50"
+                                cy="50"
+                                r="15"
+                                fill="#d81b60"/>
 
                     </svg>
-
                 </span>
 
                 <span>
@@ -84,13 +73,9 @@
             </a>
 
 
-            <button
-                class="menu-button"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-            >
-                Menu
+            <button class="menu-button"
+                    type="button">
+                ☰
             </button>
 
 
@@ -106,7 +91,7 @@
 
                 <a href="recursos.html">Recursos</a>
 
-                <a href="contato.html">FAQ + Contato</a>
+                <a href="contato.html">Contato</a>
 
             </nav>
 
@@ -117,24 +102,23 @@
 
     <main>
 
-        <section class="section light">
+        <section class="section">
 
             <div class="container">
 
                 <div class="section-title">
 
-                    <span>
-                        ENTENDENDO A BAIXA VISÃO
-                    </span>
+                    <span>CONHECIMENTO</span>
 
                     <h1>
-                        Existem diferentes causas e necessidades.
+                        Possíveis causas da baixa visão
                     </h1>
 
                     <p>
-                        A baixa visão pode estar relacionada a
-                        diferentes condições e cada pessoa pode
-                        apresentar necessidades específicas.
+                        A redução da visão pode estar relacionada
+                        a diferentes condições. Cada caso possui
+                        características próprias e precisa ser
+                        avaliado individualmente.
                     </p>
 
                 </div>
@@ -142,46 +126,17 @@
 
                 <div class="cards">
 
-
                     <article class="card">
 
-                        <div class="card-icon">
-
-                            <svg viewBox="0 0 80 80">
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="35"
-                                    fill="#f8bbd0"
-                                />
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="18"
-                                    fill="#ad1457"
-                                />
-
-                                <circle
-                                    cx="47"
-                                    cy="33"
-                                    r="5"
-                                    fill="white"
-                                />
-
-                            </svg>
-
-                        </div>
-
                         <h2>
-                            Alterações oculares
+                            Doenças oculares
                         </h2>
 
                         <p>
-                            Algumas doenças e alterações dos olhos
-                            podem afetar a capacidade de enxergar
-                            detalhes, cores ou contrastes.
+                            Algumas doenças que afetam estruturas
+                            do olho podem provocar redução da
+                            capacidade visual e dificuldades para
+                            realizar determinadas atividades.
                         </p>
 
                     </article>
@@ -189,35 +144,14 @@
 
                     <article class="card">
 
-                        <div class="card-icon">
-
-                            <svg viewBox="0 0 80 80">
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="35"
-                                    fill="#fce4ec"
-                                />
-
-                                <path
-                                    d="M20 48 L35 32 L47 43 L60 25"
-                                    fill="none"
-                                    stroke="#d81b60"
-                                    stroke-width="6"
-                                />
-
-                            </svg>
-
-                        </div>
-
                         <h2>
-                            Dificuldade de contraste
+                            Alterações congênitas
                         </h2>
 
                         <p>
-                            Textos e objetos com pouco contraste
-                            podem ser difíceis de identificar.
+                            Algumas pessoas apresentam alterações
+                            visuais desde o nascimento ou desde
+                            os primeiros anos de vida.
                         </p>
 
                     </article>
@@ -225,46 +159,14 @@
 
                     <article class="card">
 
-                        <div class="card-icon">
-
-                            <svg viewBox="0 0 80 80">
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="35"
-                                    fill="#f8bbd0"
-                                />
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="20"
-                                    fill="none"
-                                    stroke="#ad1457"
-                                    stroke-width="6"
-                                />
-
-                                <line
-                                    x1="55"
-                                    y1="55"
-                                    x2="67"
-                                    y2="67"
-                                    stroke="#ad1457"
-                                    stroke-width="7"
-                                />
-
-                            </svg>
-
-                        </div>
-
                         <h2>
-                            Necessidade de ampliação
+                            Doenças sistêmicas
                         </h2>
 
                         <p>
-                            Algumas pessoas precisam ampliar
-                            textos, imagens ou elementos digitais.
+                            Algumas condições que afetam o organismo
+                            também podem estar relacionadas a
+                            alterações na visão.
                         </p>
 
                     </article>
@@ -272,46 +174,87 @@
 
                     <article class="card">
 
-                        <div class="card-icon">
-
-                            <svg viewBox="0 0 80 80">
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="35"
-                                    fill="#fce4ec"
-                                />
-
-                                <rect
-                                    x="22"
-                                    y="25"
-                                    width="36"
-                                    height="30"
-                                    rx="5"
-                                    fill="#d81b60"
-                                />
-
-                                <path
-                                    d="M30 62 H50"
-                                    stroke="#ad1457"
-                                    stroke-width="6"
-                                />
-
-                            </svg>
-
-                        </div>
-
                         <h2>
-                            Acessibilidade digital
+                            Lesões
                         </h2>
 
                         <p>
-                            Sites e aplicativos acessíveis podem
-                            facilitar o acesso à informação.
+                            Traumas e lesões podem comprometer
+                            estruturas relacionadas à visão,
+                            dependendo de sua localização e
+                            gravidade.
                         </p>
 
                     </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section light">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>IMPORTANTE</span>
+
+                    <h2>
+                        Informação não substitui avaliação profissional
+                    </h2>
+
+                    <p>
+                        Alterações na visão devem ser avaliadas por
+                        profissionais de saúde. O diagnóstico e a
+                        indicação de tratamento dependem das
+                        características de cada pessoa.
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <div class="info-illustration">
+
+                        <svg viewBox="0 0 100 100">
+
+                            <circle cx="50"
+                                    cy="50"
+                                    r="42"
+                                    fill="#fce4ec"/>
+
+                            <text x="50"
+                                  y="65"
+                                  text-anchor="middle"
+                                  font-size="55"
+                                  font-weight="bold"
+                                  fill="#d81b60">
+                                !
+                            </text>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Procure orientação adequada
+                        </h2>
+
+                        <p>
+                            Caso uma pessoa perceba mudanças na
+                            visão, dificuldades novas ou sintomas
+                            que causem preocupação, é importante
+                            buscar orientação profissional.
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -328,16 +271,18 @@
 
             <div>
 
-                <strong>VisãoAcolhedora</strong>
+                <strong>
+                    VisãoAcolhedora
+                </strong>
 
                 <p>
-                    Informação, tecnologia e inclusão.
+                    Informação, acessibilidade e inclusão.
                 </p>
 
             </div>
 
             <p>
-                Projeto desenvolvido com foco em acessibilidade.
+                © 2026 VisãoAcolhedora
             </p>
 
         </div>
@@ -345,11 +290,7 @@
     </footer>
 
 
-    <button
-        id="topButton"
-        type="button"
-        aria-label="Voltar ao topo"
-    >
+    <button id="topButton">
         ↑
     </button>
 
@@ -357,5 +298,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>

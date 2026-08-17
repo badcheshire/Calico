@@ -5,17 +5,14 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>VisãoAcolhedora | Tecnologia</title>
+    <title>VisãoAcolhedora | Tecnologia Assistiva</title>
 
     <link rel="stylesheet" href="style.css">
 
 </head>
-
 
 <body>
 
@@ -25,19 +22,19 @@
 
             <span>Acessibilidade:</span>
 
-            <button id="increaseFont" type="button">A+</button>
+            <button id="decreaseFont">A-</button>
 
-            <button id="decreaseFont" type="button">A-</button>
+            <button id="increaseFont">A+</button>
 
-            <button id="contrastButton" type="button">
+            <button id="contrastButton">
                 Contraste
             </button>
 
-            <button id="darkMode" type="button">
-                Modo escuro
+            <button id="darkMode">
+                Escuro
             </button>
 
-            <button id="spacingButton" type="button">
+            <button id="spacingButton">
                 Espaçamento
             </button>
 
@@ -50,31 +47,23 @@
 
         <div class="container nav-container">
 
-            <a href="index.html" class="logo">
+            <a href="index.html"
+               class="logo">
 
                 <span class="logo-icon">
+                    <svg viewBox="0 0 100 100">
 
-                    <svg viewBox="0 0 64 64">
+                        <circle cx="50"
+                                cy="50"
+                                r="38"
+                                fill="white"/>
 
-                        <ellipse
-                            cx="32"
-                            cy="32"
-                            rx="25"
-                            ry="16"
-                            fill="none"
-                            stroke="white"
-                            stroke-width="4"
-                        />
-
-                        <circle
-                            cx="32"
-                            cy="32"
-                            r="8"
-                            fill="white"
-                        />
+                        <circle cx="50"
+                                cy="50"
+                                r="15"
+                                fill="#d81b60"/>
 
                     </svg>
-
                 </span>
 
                 <span>
@@ -84,13 +73,8 @@
             </a>
 
 
-            <button
-                class="menu-button"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-            >
-                Menu
+            <button class="menu-button">
+                ☰
             </button>
 
 
@@ -106,7 +90,7 @@
 
                 <a href="recursos.html">Recursos</a>
 
-                <a href="contato.html">FAQ + Contato</a>
+                <a href="contato.html">Contato</a>
 
             </nav>
 
@@ -123,17 +107,17 @@
 
                 <div class="section-title white">
 
-                    <span>
-                        TECNOLOGIA ASSISTIVA
-                    </span>
+                    <span>TECNOLOGIA ASSISTIVA</span>
 
                     <h1>
-                        Ferramentas que ajudam a enxergar o mundo.
+                        Ferramentas que podem facilitar o acesso
                     </h1>
 
                     <p>
-                        A tecnologia pode oferecer diferentes
-                        formas de acessar conteúdos e informações.
+                        A tecnologia pode oferecer recursos para
+                        ampliar informações, modificar a apresentação
+                        de conteúdos e facilitar a interação com
+                        dispositivos digitais.
                     </p>
 
                 </div>
@@ -141,39 +125,16 @@
 
                 <div class="technology-grid">
 
-
                     <article class="technology">
 
-                        <div class="technology-icon">
-
-                            <svg viewBox="0 0 80 80">
-
-                                <rect
-                                    x="22"
-                                    y="12"
-                                    width="36"
-                                    height="56"
-                                    rx="6"
-                                    fill="white"
-                                />
-
-                                <rect
-                                    x="28"
-                                    y="20"
-                                    width="24"
-                                    height="32"
-                                    fill="#ec407a"
-                                />
-
-                            </svg>
-
-                        </div>
-
-                        <h2>Ampliação</h2>
+                        <h2>
+                            Ampliadores
+                        </h2>
 
                         <p>
-                            Ferramentas que aumentam textos,
-                            imagens e elementos da tela.
+                            Recursos de ampliação podem aumentar
+                            textos, imagens e elementos da tela,
+                            facilitando a visualização de detalhes.
                         </p>
 
                     </article>
@@ -181,31 +142,14 @@
 
                     <article class="technology">
 
-                        <div class="technology-icon">
-
-                            <svg viewBox="0 0 80 80">
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="28"
-                                    fill="white"
-                                />
-
-                                <path
-                                    d="M28 40 Q40 25 52 40 Q40 55 28 40"
-                                    fill="#d81b60"
-                                />
-
-                            </svg>
-
-                        </div>
-
-                        <h2>Leitores de tela</h2>
+                        <h2>
+                            Leitores de tela
+                        </h2>
 
                         <p>
-                            Transformam conteúdos escritos
-                            em informações sonoras.
+                            Leitores de tela transformam conteúdos
+                            digitais em áudio ou em outras formas
+                            de saída acessíveis.
                         </p>
 
                     </article>
@@ -213,38 +157,14 @@
 
                     <article class="technology">
 
-                        <div class="technology-icon">
-
-                            <svg viewBox="0 0 80 80">
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="28"
-                                    fill="white"
-                                />
-
-                                <path
-                                    d="M25 40 H55"
-                                    stroke="#d81b60"
-                                    stroke-width="6"
-                                />
-
-                                <path
-                                    d="M40 25 V55"
-                                    stroke="#d81b60"
-                                    stroke-width="6"
-                                />
-
-                            </svg>
-
-                        </div>
-
-                        <h2>Alto contraste</h2>
+                        <h2>
+                            Alto contraste
+                        </h2>
 
                         <p>
-                            Melhora a diferenciação entre
-                            elementos e textos.
+                            Alterar as combinações de cores pode
+                            facilitar a identificação de textos e
+                            elementos para algumas pessoas.
                         </p>
 
                     </article>
@@ -252,33 +172,74 @@
 
                     <article class="technology">
 
-                        <div class="technology-icon">
-
-                            <svg viewBox="0 0 80 80">
-
-                                <circle
-                                    cx="40"
-                                    cy="40"
-                                    r="28"
-                                    fill="white"
-                                />
-
-                                <path
-                                    d="M25 50 L35 35 L45 45 L57 28"
-                                    fill="none"
-                                    stroke="#d81b60"
-                                    stroke-width="6"
-                                />
-
-                            </svg>
-
-                        </div>
-
-                        <h2>Personalização</h2>
+                        <h2>
+                            Comandos de voz
+                        </h2>
 
                         <p>
-                            Permite adaptar tamanho, cores
-                            e espaçamento conforme a necessidade.
+                            Recursos de voz podem ajudar na navegação,
+                            pesquisa, escrita e utilização de
+                            dispositivos.
+                        </p>
+
+                    </article>
+
+
+                    <article class="technology">
+
+                        <h2>
+                            Zoom digital
+                        </h2>
+
+                        <p>
+                            Computadores e celulares possuem recursos
+                            que permitem ampliar partes da tela para
+                            facilitar a visualização.
+                        </p>
+
+                    </article>
+
+
+                    <article class="technology">
+
+                        <h2>
+                            Ajustes de tela
+                        </h2>
+
+                        <p>
+                            Tamanho da fonte, contraste, cores,
+                            brilho e outras configurações podem ser
+                            adaptados conforme as necessidades.
+                        </p>
+
+                    </article>
+
+
+                    <article class="technology">
+
+                        <h2>
+                            Aplicativos acessíveis
+                        </h2>
+
+                        <p>
+                            Aplicativos desenvolvidos pensando em
+                            acessibilidade podem oferecer diferentes
+                            formas de interação com o conteúdo.
+                        </p>
+
+                    </article>
+
+
+                    <article class="technology">
+
+                        <h2>
+                            Recursos educacionais
+                        </h2>
+
+                        <p>
+                            Materiais digitais ampliáveis e recursos
+                            adaptados podem auxiliar estudantes em
+                            diferentes atividades.
                         </p>
 
                     </article>
@@ -298,16 +259,18 @@
 
             <div>
 
-                <strong>VisãoAcolhedora</strong>
+                <strong>
+                    VisãoAcolhedora
+                </strong>
 
                 <p>
-                    Informação, tecnologia e inclusão.
+                    Informação, acessibilidade e inclusão.
                 </p>
 
             </div>
 
             <p>
-                Projeto desenvolvido com foco em acessibilidade.
+                © 2026 VisãoAcolhedora
             </p>
 
         </div>
@@ -315,11 +278,7 @@
     </footer>
 
 
-    <button
-        id="topButton"
-        type="button"
-        aria-label="Voltar ao topo"
-    >
+    <button id="topButton">
         ↑
     </button>
 
@@ -327,5 +286,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>
