@@ -1,9 +1,51 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =====================================================
+       CONFIGURAÇÕES DE ACESSIBILIDADE
+       Salvas no navegador com localStorage
+    ===================================================== */
 
-    /* =========================
-       MENU MOBILE
-    ========================== */
+    const html = document.documentElement;
+    const body = document.body;
+
+    const tamanhoSalvo =
+        localStorage.getItem("tamanhoFonte") || "16";
+
+    const modoEscuro =
+        localStorage.getItem("modoEscuro") === "true";
+
+    const altoContraste =
+        localStorage.getItem("altoContraste") === "true";
+
+    const espacamento =
+        localStorage.getItem("espacamento") === "true";
+
+
+    /* =====================================================
+       APLICAR CONFIGURAÇÕES SALVAS
+    ===================================================== */
+
+    html.style.setProperty(
+        "--tamanho",
+        tamanhoSalvo + "px"
+    );
+
+    if (modoEscuro) {
+        body.classList.add("dark");
+    }
+
+    if (altoContraste) {
+        body.classList.add("high-contrast");
+    }
+
+    if (espacamento) {
+        body.classList.add("extra-spacing");
+    }
+
+
+    /* =====================================================
+       MENU
+    ===================================================== */
 
     const menuButton =
         document.querySelector(".menu-button");
@@ -11,145 +53,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const nav =
         document.querySelector("nav");
 
-
     if (menuButton && nav) {
 
-        menuButton.addEventListener("click", function () {
-
-            nav.classList.toggle("active");
-
-            const aberto =
-                nav.classList.contains("active");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                aberto ? "true" : "false"
-            );
-
-        });
-
-    }
-
-
-    /* =========================
-       FECHAR MENU AO CLICAR
-       EM UM LINK
-    ========================== */
-
-    const links =
-        document.querySelectorAll("nav a");
-
-
-    links.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            if (nav) {
-
-                nav.classList.remove("active");
-
-            }
-
-            if (menuButton) {
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        });
-
-    });
-
-
-    /* =========================
-       AUMENTAR FONTE
-    ========================== */
-
-    const increaseFont =
-        document.getElementById("increaseFont");
-
-
-    if (increaseFont) {
-
-        increaseFont.addEventListener("click", function () {
-
-            const atual =
-                parseInt(
-                    getComputedStyle(
-                        document.documentElement
-                    )
-                    .getPropertyValue("--tamanho")
-                );
-
-
-            if (atual < 24) {
-
-                document.documentElement.style.setProperty(
-                    "--tamanho",
-                    (atual + 2) + "px"
-                );
-
-            }
-
-        });
-
-    }
-
-
-    /* =========================
-       DIMINUIR FONTE
-    ========================== */
-
-    const decreaseFont =
-        document.getElementById("decreaseFont");
-
-
-    if (decreaseFont) {
-
-        decreaseFont.addEventListener("click", function () {
-
-            const atual =
-                parseInt(
-                    getComputedStyle(
-                        document.documentElement
-                    )
-                    .getPropertyValue("--tamanho")
-                );
-
-
-            if (atual > 12) {
-
-                document.documentElement.style.setProperty(
-                    "--tamanho",
-                    (atual - 2) + "px"
-                );
-
-            }
-
-        });
-
-    }
-
-
-    /* =========================
-       CONTRASTE
-    ========================== */
-
-    const contrastButton =
-        document.getElementById("contrastButton");
-
-
-    if (contrastButton) {
-
-        contrastButton.addEventListener(
+        menuButton.addEventListener(
             "click",
             function () {
 
-                document.body.classList.toggle(
-                    "high-contrast"
+                nav.classList.toggle("active");
+
+                const aberto =
+                    nav.classList.contains("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    aberto ? "true" : "false"
                 );
 
             }
@@ -158,13 +75,123 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
+    /* =====================================================
+       FECHAR MENU
+    ===================================================== */
+
+    document
+        .querySelectorAll("nav a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    if (nav) {
+                        nav.classList.remove("active");
+                    }
+
+                    if (menuButton) {
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       AUMENTAR FONTE
+    ===================================================== */
+
+    const increaseFont =
+        document.getElementById("increaseFont");
+
+    if (increaseFont) {
+
+        increaseFont.addEventListener(
+            "click",
+            function () {
+
+                let tamanho =
+                    parseInt(
+                        getComputedStyle(html)
+                            .getPropertyValue("--tamanho")
+                    );
+
+                if (tamanho < 24) {
+
+                    tamanho += 2;
+
+                    html.style.setProperty(
+                        "--tamanho",
+                        tamanho + "px"
+                    );
+
+                    localStorage.setItem(
+                        "tamanhoFonte",
+                        tamanho
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       DIMINUIR FONTE
+    ===================================================== */
+
+    const decreaseFont =
+        document.getElementById("decreaseFont");
+
+    if (decreaseFont) {
+
+        decreaseFont.addEventListener(
+            "click",
+            function () {
+
+                let tamanho =
+                    parseInt(
+                        getComputedStyle(html)
+                            .getPropertyValue("--tamanho")
+                    );
+
+                if (tamanho > 12) {
+
+                    tamanho -= 2;
+
+                    html.style.setProperty(
+                        "--tamanho",
+                        tamanho + "px"
+                    );
+
+                    localStorage.setItem(
+                        "tamanhoFonte",
+                        tamanho
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
        MODO ESCURO
-    ========================== */
+    ===================================================== */
 
     const darkMode =
         document.getElementById("darkMode");
-
 
     if (darkMode) {
 
@@ -172,8 +199,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                document.body.classList.toggle(
-                    "dark"
+                body.classList.toggle("dark");
+
+                localStorage.setItem(
+                    "modoEscuro",
+                    body.classList.contains("dark")
                 );
 
             }
@@ -182,13 +212,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
+    /* =====================================================
+       ALTO CONTRASTE
+    ===================================================== */
+
+    const contrastButton =
+        document.getElementById("contrastButton");
+
+    if (contrastButton) {
+
+        contrastButton.addEventListener(
+            "click",
+            function () {
+
+                body.classList.toggle(
+                    "high-contrast"
+                );
+
+                localStorage.setItem(
+                    "altoContraste",
+                    body.classList.contains(
+                        "high-contrast"
+                    )
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
        ESPAÇAMENTO
-    ========================== */
+    ===================================================== */
 
     const spacingButton =
         document.getElementById("spacingButton");
-
 
     if (spacingButton) {
 
@@ -196,8 +255,15 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                document.body.classList.toggle(
+                body.classList.toggle(
                     "extra-spacing"
+                );
+
+                localStorage.setItem(
+                    "espacamento",
+                    body.classList.contains(
+                        "extra-spacing"
+                    )
                 );
 
             }
@@ -206,15 +272,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
+    /* =====================================================
        FAQ
-    ========================== */
+    ===================================================== */
 
     const questions =
         document.querySelectorAll(
             ".faq-question"
         );
-
 
     questions.forEach(function (question) {
 
@@ -225,28 +290,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 const answer =
                     question.nextElementSibling;
 
-
-                if (!answer) {
-                    return;
-                }
-
+                if (!answer) return;
 
                 const aberto =
                     answer.classList.contains(
                         "active"
                     );
 
-
                 answer.classList.toggle(
                     "active"
                 );
 
-
                 const sinal =
-                    question.querySelector(
-                        "span"
-                    );
-
+                    question.querySelector("span");
 
                 if (sinal) {
 
@@ -261,13 +317,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =========================
+    /* =====================================================
        BOTÃO VOLTAR AO TOPO
-    ========================== */
+    ===================================================== */
 
     const topButton =
         document.getElementById("topButton");
-
 
     if (topButton) {
 
@@ -277,15 +332,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (window.scrollY > 400) {
 
-                    topButton.classList.add(
-                        "show"
-                    );
+                    topButton.classList.add("show");
 
                 } else {
 
-                    topButton.classList.remove(
-                        "show"
-                    );
+                    topButton.classList.remove("show");
 
                 }
 
@@ -298,11 +349,8 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
 
                 window.scrollTo({
-
                     top: 0,
-
                     behavior: "smooth"
-
                 });
 
             }
@@ -311,16 +359,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
+    /* =====================================================
        FORMULÁRIO
-       WEB3FORMS
-    ========================== */
+    ===================================================== */
 
     const form =
-        document.querySelector(
-            ".contact-form"
-        );
-
+        document.querySelector(".contact-form");
 
     if (form) {
 
@@ -329,26 +373,14 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 const name =
-                    document.getElementById(
-                        "name"
-                    );
-
+                    document.getElementById("name");
 
                 const email =
-                    document.getElementById(
-                        "email"
-                    );
-
+                    document.getElementById("email");
 
                 const message =
-                    document.getElementById(
-                        "message"
-                    );
+                    document.getElementById("message");
 
-
-                /* =========================
-                   NOME
-                ========================== */
 
                 if (
                     name &&
@@ -357,9 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     event.preventDefault();
 
-                    alert(
-                        "Digite seu nome."
-                    );
+                    alert("Digite seu nome.");
 
                     name.focus();
 
@@ -368,10 +398,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /* =========================
-                   E-MAIL
-                ========================== */
-
                 if (
                     email &&
                     !email.value.trim()
@@ -379,9 +405,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     event.preventDefault();
 
-                    alert(
-                        "Digite seu e-mail."
-                    );
+                    alert("Digite seu e-mail.");
 
                     email.focus();
 
@@ -390,10 +414,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /* =========================
-                   MENSAGEM
-                ========================== */
-
                 if (
                     message &&
                     !message.value.trim()
@@ -401,9 +421,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     event.preventDefault();
 
-                    alert(
-                        "Digite uma mensagem."
-                    );
+                    alert("Digite uma mensagem.");
 
                     message.focus();
 
@@ -411,35 +429,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-
-                /*
-                 * NÃO usar
-                 * event.preventDefault()
-                 * aqui.
-                 *
-                 * Se estiver tudo correto,
-                 * o formulário será enviado
-                 * normalmente para o Web3Forms.
-                 */
-
             }
         );
 
     }
 
 
-    /* =========================
+    /* =====================================================
        OLHO SEGUINDO O MOUSE
-       
-       Só funciona na página
-       que possui #eyeFollower.
-    ========================== */
+    ===================================================== */
 
     const eye =
-        document.getElementById(
-            "eyeFollower"
-        );
-
+        document.getElementById("eyeFollower");
 
     if (eye) {
 
@@ -447,65 +448,28 @@ document.addEventListener("DOMContentLoaded", function () {
             "mousemove",
             function (event) {
 
-
-                /* =========================
-                   POSIÇÃO DO OLHO
-                ========================== */
-
-                const eyeRect =
+                const rect =
                     eye.getBoundingClientRect();
 
+                const centerX =
+                    rect.left +
+                    rect.width / 2;
 
-                const eyeCenterX =
-                    eyeRect.left +
-                    eyeRect.width / 2;
-
-
-                const eyeCenterY =
-                    eyeRect.top +
-                    eyeRect.height / 2;
-
-
-                /* =========================
-                   POSIÇÃO DO MOUSE
-                ========================== */
-
-                const mouseX =
-                    event.clientX;
-
-
-                const mouseY =
-                    event.clientY;
-
-
-                /* =========================
-                   DISTÂNCIA
-                ========================== */
+                const centerY =
+                    rect.top +
+                    rect.height / 2;
 
                 const deltaX =
-                    mouseX -
-                    eyeCenterX;
-
+                    event.clientX - centerX;
 
                 const deltaY =
-                    mouseY -
-                    eyeCenterY;
-
-
-                /* =========================
-                   ÂNGULO
-                ========================== */
+                    event.clientY - centerY;
 
                 const angle =
                     Math.atan2(
                         deltaY,
                         deltaX
                     );
-
-
-                /* =========================
-                   MOVIMENTO
-                ========================== */
 
                 const distancia =
                     Math.min(
@@ -516,20 +480,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         ) / 15
                     );
 
-
                 const x =
                     Math.cos(angle) *
                     distancia;
 
-
                 const y =
                     Math.sin(angle) *
                     distancia;
-
-
-                /* =========================
-                   APLICAR MOVIMENTO
-                ========================== */
 
                 eye.style.transform =
                     `translate(${x}px, ${y}px)`;
