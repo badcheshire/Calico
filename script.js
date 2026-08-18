@@ -82,42 +82,72 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =====================================================
-       AUMENTAR FONTE
-    ===================================================== */
+  /* =====================================================
+   TAMANHO DA FONTE
+===================================================== */
 
-    const increaseFont =
-        document.getElementById("increaseFont");
+let tamanhoFonte =
+    parseInt(localStorage.getItem("tamanhoFonte")) || 16;
 
-    if (increaseFont) {
+function aplicarTamanhoFonte() {
 
-        increaseFont.addEventListener("click", function () {
+    document.documentElement.style.setProperty(
+        "--tamanho",
+        tamanhoFonte + "px"
+    );
 
-            let tamanho =
-                parseInt(
-                    getComputedStyle(html)
-                        .getPropertyValue("--tamanho")
-                );
+    document.documentElement.setAttribute(
+        "data-font-size",
+        tamanhoFonte
+    );
 
-            if (tamanho < 24) {
+    localStorage.setItem(
+        "tamanhoFonte",
+        tamanhoFonte
+    );
+}
 
-                tamanho += 2;
+aplicarTamanhoFonte();
 
-                html.style.setProperty(
-                    "--tamanho",
-                    tamanho + "px"
-                );
 
-                localStorage.setItem(
-                    "tamanhoFonte",
-                    tamanho
-                );
+const increaseFont =
+    document.getElementById("increaseFont");
 
-            }
+if (increaseFont) {
 
-        });
+    increaseFont.addEventListener("click", function () {
 
-    }
+        if (tamanhoFonte < 28) {
+
+            tamanhoFonte += 2;
+
+            aplicarTamanhoFonte();
+
+        }
+
+    });
+
+}
+
+
+const decreaseFont =
+    document.getElementById("decreaseFont");
+
+if (decreaseFont) {
+
+    decreaseFont.addEventListener("click", function () {
+
+        if (tamanhoFonte > 12) {
+
+            tamanhoFonte -= 2;
+
+            aplicarTamanhoFonte();
+
+        }
+
+    });
+
+}
 
 
     /* =====================================================

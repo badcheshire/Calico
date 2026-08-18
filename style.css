@@ -31,9 +31,8 @@
 
 
 html {
-    scroll-behavior: smooth;
+    font-size: var(--tamanho);
 }
-
 
 body {
     font-family:
@@ -45,7 +44,7 @@ body {
 
     color: var(--texto);
 
-    font-size: var(--tamanho);
+    font-size: 1rem;
 
     line-height: 1.7;
 
@@ -53,26 +52,6 @@ body {
         background 0.3s ease,
         color 0.3s ease;
 }
-
-
-img,
-svg {
-    max-width: 100%;
-}
-
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-button,
-input,
-textarea {
-    font: inherit;
-}
-
 
 /* =====================================================
    CONTAINER
