@@ -31,7 +31,21 @@
 
 
 html {
-    font-size: var(--tamanho);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--fundo);
+    color: var(--texto);
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 body {
@@ -1495,4 +1509,105 @@ body.extra-spacing {
         padding: 60px 0;
     }
 
+}
+/* =====================================================
+   ACESSIBILIDADE — TAMANHO DOS TEXTOS
+===================================================== */
+
+body.font-18 {
+    font-size: 18px;
+}
+
+body.font-20 {
+    font-size: 20px;
+}
+
+body.font-22 {
+    font-size: 22px;
+}
+
+body.font-24 {
+    font-size: 24px;
+}
+
+body.font-26 {
+    font-size: 26px;
+}
+
+body.font-28 {
+    font-size: 28px;
+}
+
+
+/* Mantém títulos proporcionais */
+
+body.font-18 h1,
+body.font-18 h2,
+body.font-18 h3,
+body.font-18 p,
+body.font-18 li,
+body.font-18 label,
+body.font-18 a,
+body.font-18 button {
+    font-size: 1em;
+}
+
+
+body.font-20 h1,
+body.font-20 h2,
+body.font-20 h3,
+body.font-20 p,
+body.font-20 li,
+body.font-20 label,
+body.font-20 a,
+body.font-20 button {
+    font-size: 1em;
+}
+
+
+body.font-22 h1,
+body.font-22 h2,
+body.font-22 h3,
+body.font-22 p,
+body.font-22 li,
+body.font-22 label,
+body.font-22 a,
+body.font-22 button {
+    font-size: 1em;
+}
+
+
+body.font-24 h1,
+body.font-24 h2,
+body.font-24 h3,
+body.font-24 p,
+body.font-24 li,
+body.font-24 label,
+body.font-24 a,
+body.font-24 button {
+    font-size: 1em;
+}
+
+
+body.font-26 h1,
+body.font-26 h2,
+body.font-26 h3,
+body.font-26 p,
+body.font-26 li,
+body.font-26 label,
+body.font-26 a,
+body.font-26 button {
+    font-size: 1em;
+}
+
+
+body.font-28 h1,
+body.font-28 h2,
+body.font-28 h3,
+body.font-28 p,
+body.font-28 li,
+body.font-28 label,
+body.font-28 a,
+body.font-28 button {
+    font-size: 1em;
 }

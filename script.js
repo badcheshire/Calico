@@ -82,23 +82,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-  /* =====================================================
+ /* =====================================================
    TAMANHO DA FONTE
 ===================================================== */
 
 let tamanhoFonte =
     parseInt(localStorage.getItem("tamanhoFonte")) || 16;
 
+
+/* Aplica o tamanho */
+
 function aplicarTamanhoFonte() {
 
-    document.documentElement.style.setProperty(
-        "--tamanho",
+    document.body.style.setProperty(
+        "--tamanho-texto",
         tamanhoFonte + "px"
-    );
-
-    document.documentElement.setAttribute(
-        "data-font-size",
-        tamanhoFonte
     );
 
     localStorage.setItem(
@@ -107,8 +105,11 @@ function aplicarTamanhoFonte() {
     );
 }
 
+
 aplicarTamanhoFonte();
 
+
+/* AUMENTAR */
 
 const increaseFont =
     document.getElementById("increaseFont");
@@ -130,6 +131,8 @@ if (increaseFont) {
 }
 
 
+/* DIMINUIR */
+
 const decreaseFont =
     document.getElementById("decreaseFont");
 
@@ -148,7 +151,6 @@ if (decreaseFont) {
     });
 
 }
-
 
     /* =====================================================
        DIMINUIR FONTE
