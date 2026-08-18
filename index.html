@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -13,11 +14,10 @@
     <title>VisãoAcolhedora | Início</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-
-    <!-- ACESSIBILIDADE -->
 
     <div class="accessibility-bar">
 
@@ -26,32 +26,27 @@
             <span>Acessibilidade:</span>
 
             <button id="decreaseFont"
-                    type="button"
-                    aria-label="Diminuir tamanho da fonte">
+                    type="button">
                 A-
             </button>
 
             <button id="increaseFont"
-                    type="button"
-                    aria-label="Aumentar tamanho da fonte">
+                    type="button">
                 A+
             </button>
 
             <button id="contrastButton"
-                    type="button"
-                    aria-label="Ativar alto contraste">
+                    type="button">
                 Contraste
             </button>
 
             <button id="darkMode"
-                    type="button"
-                    aria-label="Ativar modo escuro">
+                    type="button">
                 Escuro
             </button>
 
             <button id="spacingButton"
-                    type="button"
-                    aria-label="Aumentar espaçamento">
+                    type="button">
                 Espaçamento
             </button>
 
@@ -59,8 +54,6 @@
 
     </div>
 
-
-    <!-- CABEÇALHO -->
 
     <header class="header">
 
@@ -71,8 +64,7 @@
 
                 <span class="logo-icon">
 
-                    <svg viewBox="0 0 100 100"
-                         xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 100 100">
 
                         <circle cx="50"
                                 cy="50"
@@ -95,11 +87,25 @@
             </a>
 
 
+            <!-- OLHO -->
+
+            <div class="eye-wrapper"
+                 aria-hidden="true">
+
+                <div id="eyeFollower"
+                     class="eyeFollower">
+                </div>
+
+            </div>
+
+
             <button class="menu-button"
                     type="button"
                     aria-expanded="false"
                     aria-label="Abrir menu">
+
                 ☰
+
             </button>
 
 
@@ -124,14 +130,11 @@
     </header>
 
 
-    <!-- PRINCIPAL -->
-
     <main>
 
         <section class="hero">
 
             <div class="container hero-content">
-
 
                 <div class="hero-text">
 
@@ -158,7 +161,6 @@
                         sejam compreendidas e respeitadas.
                     </p>
 
-
                     <div class="hero-buttons">
 
                         <a href="sobre.html"
@@ -180,8 +182,7 @@
 
                     <div class="hero-illustration">
 
-                        <svg viewBox="0 0 500 400"
-                             xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="0 0 500 400">
 
                             <circle cx="250"
                                     cy="200"
@@ -229,8 +230,6 @@
         </section>
 
 
-        <!-- INTRODUÇÃO -->
-
         <section class="section">
 
             <div class="container">
@@ -246,9 +245,8 @@
                     <p>
                         A baixa visão pode influenciar diferentes
                         atividades do cotidiano. Entender suas
-                        características é um passo importante para
-                        melhorar a acessibilidade e combater
-                        barreiras.
+                        características é importante para melhorar
+                        a acessibilidade.
                     </p>
 
                 </div>
@@ -258,16 +256,13 @@
 
                     <article class="card">
 
-                        <h2>
-                            Informação
-                        </h2>
+                        <h2>Informação</h2>
 
                         <p>
-                            Ter acesso a informações claras ajuda
-                            pessoas com baixa visão, familiares,
-                            professores e profissionais a
-                            compreenderem melhor as necessidades
-                            de acessibilidade.
+                            Informações claras ajudam pessoas com
+                            baixa visão, familiares, professores e
+                            profissionais a compreenderem melhor
+                            as necessidades de acessibilidade.
                         </p>
 
                     </article>
@@ -275,15 +270,13 @@
 
                     <article class="card">
 
-                        <h2>
-                            Inclusão
-                        </h2>
+                        <h2>Inclusão</h2>
 
                         <p>
-                            A inclusão envolve garantir que pessoas
-                            com diferentes capacidades possam
-                            participar dos espaços sociais,
-                            educacionais e digitais.
+                            A inclusão significa criar condições
+                            para que pessoas com diferentes
+                            capacidades possam participar dos
+                            espaços sociais e educacionais.
                         </p>
 
                     </article>
@@ -291,15 +284,12 @@
 
                     <article class="card">
 
-                        <h2>
-                            Acessibilidade
-                        </h2>
+                        <h2>Acessibilidade</h2>
 
                         <p>
-                            Pequenas mudanças no ambiente, nos
-                            materiais e nas tecnologias podem
-                            facilitar o acesso à informação e à
-                            participação cotidiana.
+                            Mudanças em ambientes, materiais e
+                            tecnologias podem facilitar o acesso
+                            à informação.
                         </p>
 
                     </article>
@@ -307,14 +297,12 @@
 
                     <article class="card">
 
-                        <h2>
-                            Tecnologia
-                        </h2>
+                        <h2>Tecnologia</h2>
 
                         <p>
-                            Recursos digitais e tecnologias
-                            assistivas podem auxiliar na leitura,
-                            ampliação, navegação e comunicação.
+                            Recursos digitais podem auxiliar na
+                            leitura, ampliação, navegação e
+                            comunicação.
                         </p>
 
                     </article>
@@ -326,38 +314,31 @@
         </section>
 
 
-        <!-- GUIA -->
-
         <section class="guide">
 
             <div class="container guide-content">
 
-                <div>
+                <span class="guide-label">
+                    MATERIAL DE APOIO
+                </span>
 
-                    <span class="guide-label">
-                        MATERIAL DE APOIO
-                    </span>
+                <h2>
+                    Quer aprender mais?
+                </h2>
 
-                    <h2>
-                        Quer aprender mais?
-                    </h2>
+                <p>
+                    Consulte nosso guia com informações
+                    complementares sobre baixa visão,
+                    acessibilidade e inclusão.
+                </p>
 
-                    <p>
-                        Consulte nosso guia com informações
-                        organizadas sobre baixa visão,
-                        acessibilidade e recursos que podem
-                        contribuir para uma experiência mais
-                        inclusiva.
-                    </p>
+                <a href="guia-baixa-visao.pdf"
+                   target="_blank"
+                   class="button white-button">
 
-                    <a href="guia-baixa-visao.pdf"
-                       target="_blank"
-                       rel="noopener"
-                       class="button white-button">
-                        Abrir guia
-                    </a>
+                    Abrir guia
 
-                </div>
+                </a>
 
             </div>
 
@@ -365,8 +346,6 @@
 
     </main>
 
-
-    <!-- RODAPÉ -->
 
     <footer>
 
@@ -396,11 +375,14 @@
     <button id="topButton"
             type="button"
             aria-label="Voltar ao topo">
+
         ↑
+
     </button>
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

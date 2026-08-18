@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
        CONFIGURAÇÕES DE ACESSIBILIDADE
-       Salvas no navegador com localStorage
     ===================================================== */
 
     const html = document.documentElement;
@@ -11,34 +10,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const tamanhoSalvo =
         localStorage.getItem("tamanhoFonte") || "16";
 
-    const modoEscuro =
-        localStorage.getItem("modoEscuro") === "true";
-
-    const altoContraste =
-        localStorage.getItem("altoContraste") === "true";
-
-    const espacamento =
-        localStorage.getItem("espacamento") === "true";
-
-
-    /* =====================================================
-       APLICAR CONFIGURAÇÕES SALVAS
-    ===================================================== */
-
     html.style.setProperty(
         "--tamanho",
         tamanhoSalvo + "px"
     );
 
-    if (modoEscuro) {
+
+    if (localStorage.getItem("modoEscuro") === "true") {
         body.classList.add("dark");
     }
 
-    if (altoContraste) {
+    if (localStorage.getItem("altoContraste") === "true") {
         body.classList.add("high-contrast");
     }
 
-    if (espacamento) {
+    if (localStorage.getItem("espacamento") === "true") {
         body.classList.add("extra-spacing");
     }
 
@@ -55,22 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuButton && nav) {
 
-        menuButton.addEventListener(
-            "click",
-            function () {
+        menuButton.addEventListener("click", function () {
 
-                nav.classList.toggle("active");
+            nav.classList.toggle("active");
 
-                const aberto =
-                    nav.classList.contains("active");
+            const aberto =
+                nav.classList.contains("active");
 
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    aberto ? "true" : "false"
-                );
+            menuButton.setAttribute(
+                "aria-expanded",
+                aberto ? "true" : "false"
+            );
 
-            }
-        );
+        });
 
     }
 
@@ -79,29 +62,24 @@ document.addEventListener("DOMContentLoaded", function () {
        FECHAR MENU
     ===================================================== */
 
-    document
-        .querySelectorAll("nav a")
-        .forEach(function (link) {
+    document.querySelectorAll("nav a").forEach(function (link) {
 
-            link.addEventListener(
-                "click",
-                function () {
+        link.addEventListener("click", function () {
 
-                    if (nav) {
-                        nav.classList.remove("active");
-                    }
+            if (nav) {
+                nav.classList.remove("active");
+            }
 
-                    if (menuButton) {
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-                    }
-
-                }
-            );
+            if (menuButton) {
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
 
         });
+
+    });
 
 
     /* =====================================================
@@ -113,34 +91,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (increaseFont) {
 
-        increaseFont.addEventListener(
-            "click",
-            function () {
+        increaseFont.addEventListener("click", function () {
 
-                let tamanho =
-                    parseInt(
-                        getComputedStyle(html)
-                            .getPropertyValue("--tamanho")
-                    );
+            let tamanho =
+                parseInt(
+                    getComputedStyle(html)
+                        .getPropertyValue("--tamanho")
+                );
 
-                if (tamanho < 24) {
+            if (tamanho < 24) {
 
-                    tamanho += 2;
+                tamanho += 2;
 
-                    html.style.setProperty(
-                        "--tamanho",
-                        tamanho + "px"
-                    );
+                html.style.setProperty(
+                    "--tamanho",
+                    tamanho + "px"
+                );
 
-                    localStorage.setItem(
-                        "tamanhoFonte",
-                        tamanho
-                    );
-
-                }
+                localStorage.setItem(
+                    "tamanhoFonte",
+                    tamanho
+                );
 
             }
-        );
+
+        });
 
     }
 
@@ -154,34 +129,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (decreaseFont) {
 
-        decreaseFont.addEventListener(
-            "click",
-            function () {
+        decreaseFont.addEventListener("click", function () {
 
-                let tamanho =
-                    parseInt(
-                        getComputedStyle(html)
-                            .getPropertyValue("--tamanho")
-                    );
+            let tamanho =
+                parseInt(
+                    getComputedStyle(html)
+                        .getPropertyValue("--tamanho")
+                );
 
-                if (tamanho > 12) {
+            if (tamanho > 12) {
 
-                    tamanho -= 2;
+                tamanho -= 2;
 
-                    html.style.setProperty(
-                        "--tamanho",
-                        tamanho + "px"
-                    );
+                html.style.setProperty(
+                    "--tamanho",
+                    tamanho + "px"
+                );
 
-                    localStorage.setItem(
-                        "tamanhoFonte",
-                        tamanho
-                    );
-
-                }
+                localStorage.setItem(
+                    "tamanhoFonte",
+                    tamanho
+                );
 
             }
-        );
+
+        });
 
     }
 
@@ -195,19 +167,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (darkMode) {
 
-        darkMode.addEventListener(
-            "click",
-            function () {
+        darkMode.addEventListener("click", function () {
 
-                body.classList.toggle("dark");
+            body.classList.toggle("dark");
 
-                localStorage.setItem(
-                    "modoEscuro",
-                    body.classList.contains("dark")
-                );
+            localStorage.setItem(
+                "modoEscuro",
+                body.classList.contains("dark")
+            );
 
-            }
-        );
+        });
 
     }
 
@@ -221,23 +190,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (contrastButton) {
 
-        contrastButton.addEventListener(
-            "click",
-            function () {
+        contrastButton.addEventListener("click", function () {
 
-                body.classList.toggle(
-                    "high-contrast"
-                );
+            body.classList.toggle("high-contrast");
 
-                localStorage.setItem(
-                    "altoContraste",
-                    body.classList.contains(
-                        "high-contrast"
-                    )
-                );
+            localStorage.setItem(
+                "altoContraste",
+                body.classList.contains("high-contrast")
+            );
 
-            }
-        );
+        });
 
     }
 
@@ -251,23 +213,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (spacingButton) {
 
-        spacingButton.addEventListener(
-            "click",
-            function () {
+        spacingButton.addEventListener("click", function () {
 
-                body.classList.toggle(
-                    "extra-spacing"
-                );
+            body.classList.toggle("extra-spacing");
 
-                localStorage.setItem(
-                    "espacamento",
-                    body.classList.contains(
-                        "extra-spacing"
-                    )
-                );
+            localStorage.setItem(
+                "espacamento",
+                body.classList.contains("extra-spacing")
+            );
 
-            }
-        );
+        });
 
     }
 
@@ -277,48 +232,41 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
 
     const questions =
-        document.querySelectorAll(
-            ".faq-question"
-        );
+        document.querySelectorAll(".faq-question");
 
     questions.forEach(function (question) {
 
-        question.addEventListener(
-            "click",
-            function () {
+        question.addEventListener("click", function () {
 
-                const answer =
-                    question.nextElementSibling;
+            const answer =
+                question.nextElementSibling;
 
-                if (!answer) return;
+            if (!answer) {
+                return;
+            }
 
-                const aberto =
-                    answer.classList.contains(
-                        "active"
-                    );
+            const aberto =
+                answer.classList.contains("active");
 
-                answer.classList.toggle(
-                    "active"
-                );
+            answer.classList.toggle("active");
 
-                const sinal =
-                    question.querySelector("span");
+            const sinal =
+                question.querySelector(".faq-symbol");
 
-                if (sinal) {
+            if (sinal) {
 
-                    sinal.textContent =
-                        aberto ? "+" : "−";
-
-                }
+                sinal.textContent =
+                    aberto ? "+" : "−";
 
             }
-        );
+
+        });
 
     });
 
 
     /* =====================================================
-       BOTÃO VOLTAR AO TOPO
+       VOLTAR AO TOPO
     ===================================================== */
 
     const topButton =
@@ -326,41 +274,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (topButton) {
 
-        window.addEventListener(
-            "scroll",
-            function () {
+        window.addEventListener("scroll", function () {
 
-                if (window.scrollY > 400) {
+            if (window.scrollY > 400) {
 
-                    topButton.classList.add("show");
+                topButton.classList.add("show");
 
-                } else {
+            } else {
 
-                    topButton.classList.remove("show");
-
-                }
+                topButton.classList.remove("show");
 
             }
-        );
+
+        });
 
 
-        topButton.addEventListener(
-            "click",
-            function () {
+        topButton.addEventListener("click", function () {
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-            }
-        );
+        });
 
     }
 
 
     /* =====================================================
-       FORMULÁRIO
+       FORMULÁRIO WEB3FORMS
     ===================================================== */
 
     const form =
@@ -368,131 +310,126 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (form) {
 
-        form.addEventListener(
-            "submit",
-            function (event) {
+        form.addEventListener("submit", function (event) {
 
-                const name =
-                    document.getElementById("name");
+            const name =
+                document.getElementById("name");
 
-                const email =
-                    document.getElementById("email");
+            const email =
+                document.getElementById("email");
 
-                const message =
-                    document.getElementById("message");
+            const message =
+                document.getElementById("message");
 
 
-                if (
-                    name &&
-                    !name.value.trim()
-                ) {
+            if (!name.value.trim()) {
 
-                    event.preventDefault();
+                event.preventDefault();
 
-                    alert("Digite seu nome.");
+                alert("Digite seu nome.");
 
-                    name.focus();
+                name.focus();
 
-                    return;
-
-                }
-
-
-                if (
-                    email &&
-                    !email.value.trim()
-                ) {
-
-                    event.preventDefault();
-
-                    alert("Digite seu e-mail.");
-
-                    email.focus();
-
-                    return;
-
-                }
-
-
-                if (
-                    message &&
-                    !message.value.trim()
-                ) {
-
-                    event.preventDefault();
-
-                    alert("Digite uma mensagem.");
-
-                    message.focus();
-
-                    return;
-
-                }
-
+                return;
             }
-        );
+
+
+            if (!email.value.trim()) {
+
+                event.preventDefault();
+
+                alert("Digite seu e-mail.");
+
+                email.focus();
+
+                return;
+            }
+
+
+            if (!message.value.trim()) {
+
+                event.preventDefault();
+
+                alert("Digite uma mensagem.");
+
+                message.focus();
+
+                return;
+            }
+
+        });
 
     }
 
 
     /* =====================================================
        OLHO SEGUINDO O MOUSE
+       
+       IMPORTANTE:
+       Somente a pupila se movimenta.
+       O olho inteiro não sai do lugar.
     ===================================================== */
 
-    const eye =
+    const pupil =
         document.getElementById("eyeFollower");
 
-    if (eye) {
+    if (pupil) {
 
-        document.addEventListener(
-            "mousemove",
-            function (event) {
+        document.addEventListener("mousemove", function (event) {
 
-                const rect =
-                    eye.getBoundingClientRect();
+            const rect =
+                pupil.parentElement.getBoundingClientRect();
 
-                const centerX =
-                    rect.left +
-                    rect.width / 2;
+            const centerX =
+                rect.left + rect.width / 2;
 
-                const centerY =
-                    rect.top +
-                    rect.height / 2;
+            const centerY =
+                rect.top + rect.height / 2;
 
-                const deltaX =
-                    event.clientX - centerX;
 
-                const deltaY =
-                    event.clientY - centerY;
+            const deltaX =
+                event.clientX - centerX;
 
-                const angle =
-                    Math.atan2(
-                        deltaY,
-                        deltaX
-                    );
+            const deltaY =
+                event.clientY - centerY;
 
-                const distancia =
-                    Math.min(
-                        18,
-                        Math.hypot(
-                            deltaX,
-                            deltaY
-                        ) / 15
-                    );
 
-                const x =
-                    Math.cos(angle) *
-                    distancia;
+            const angle =
+                Math.atan2(
+                    deltaY,
+                    deltaX
+                );
 
-                const y =
-                    Math.sin(angle) *
-                    distancia;
 
-                eye.style.transform =
-                    `translate(${x}px, ${y}px)`;
+            const distance =
+                Math.min(
+                    9,
+                    Math.hypot(
+                        deltaX,
+                        deltaY
+                    ) / 25
+                );
 
-            }
-        );
+
+            const x =
+                Math.cos(angle) * distance;
+
+            const y =
+                Math.sin(angle) * distance;
+
+
+            pupil.style.transform =
+                `translate(${x}px, ${y}px)`;
+
+        });
+
+
+        document.addEventListener("mouseleave", function () {
+
+            pupil.style.transform =
+                "translate(0, 0)";
+
+        });
 
     }
 

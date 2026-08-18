@@ -1,97 +1,59 @@
-/* =========================================================
-   VISÃO ACOLHEDORA
-   STYLE.CSS
-   Visual moderno + rosa original do projeto
-========================================================= */
+/* =====================================================
+   CONFIGURAÇÕES
+===================================================== */
 
 :root {
-    --rosa-escuro: #880e4f;
-    --rosa-profundo: #ad1457;
-    --rosa: #d81b60;
-    --rosa-medio: #ec407a;
-    --rosa-claro: #f8bbd0;
-    --rosa-suave: #fce4ec;
+    --tamanho: 16px;
 
-    --fundo: #fff9fb;
-    --fundo-2: #fff1f6;
+    --rosa: #d81b60;
+    --rosa-claro: #fce4ec;
+    --rosa-medio: #f8bbd0;
+    --rosa-escuro: #ad1457;
+
+    --fundo: #fff8fb;
     --branco: #ffffff;
 
-    --texto: #321d27;
-    --texto-suave: #765f69;
+    --texto: #3b2630;
+    --texto-suave: #6e5962;
 
-    --borda: rgba(173, 20, 87, 0.14);
+    --borda: #f0d7e0;
 
     --sombra:
-        0 20px 55px rgba(136, 14, 79, 0.10);
-
-    --sombra-pequena:
-        0 8px 25px rgba(136, 14, 79, 0.08);
-
-    --tamanho: 16px;
+        0 15px 40px rgba(100, 30, 60, 0.10);
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    min-height: 100vh;
 
+body {
     font-family:
-        Inter,
-        "Segoe UI",
         Arial,
+        Helvetica,
         sans-serif;
+
+    background: var(--fundo);
+
+    color: var(--texto);
 
     font-size: var(--tamanho);
 
     line-height: 1.7;
 
-    color: var(--texto);
-
-    background:
-        radial-gradient(
-            circle at 90% 5%,
-            rgba(248, 187, 208, .38),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 5% 90%,
-            rgba(252, 228, 236, .8),
-            transparent 30%
-        ),
-
-        var(--fundo);
-
-    overflow-x: hidden;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
-button,
-input,
-textarea {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
 
 img,
 svg {
@@ -99,100 +61,103 @@ svg {
 }
 
 
-/* =========================================================
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* =====================================================
    CONTAINER
-========================================================= */
+===================================================== */
 
 .container {
-    width: min(1180px, 90%);
+    width: min(1150px, 92%);
 
     margin: 0 auto;
 }
 
 
-/* =========================================================
-   BARRA DE ACESSIBILIDADE
-========================================================= */
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
 
 .accessibility-bar {
-    background: var(--rosa-escuro);
+    background: #24151c;
 
     color: white;
 
-    border-bottom: 1px solid rgba(255,255,255,.15);
+    padding: 8px 0;
+
+    font-size: 14px;
 }
 
-.accessibility-content {
-    width: min(1180px, 90%);
 
-    min-height: 42px;
+.accessibility-content {
+    width: min(1150px, 92%);
 
     margin: auto;
 
     display: flex;
 
-    justify-content: flex-end;
-
     align-items: center;
 
-    gap: 7px;
+    justify-content: flex-end;
+
+    gap: 8px;
 
     flex-wrap: wrap;
-
-    font-size: 13px;
 }
 
-.accessibility-content span {
-    margin-right: 5px;
-
-    opacity: .9;
-}
 
 .accessibility-content button {
-    border: 1px solid rgba(255,255,255,.45);
+    border: 1px solid #ffffff55;
 
-    background: rgba(255,255,255,.08);
+    background: #ffffff15;
 
     color: white;
 
-    padding: 4px 9px;
-
     border-radius: 6px;
 
-    transition: .2s ease;
+    padding: 5px 10px;
+
+    cursor: pointer;
 }
+
 
 .accessibility-content button:hover {
     background: white;
 
-    color: var(--rosa-escuro);
-
-    transform: translateY(-1px);
+    color: #24151c;
 }
 
 
-/* =========================================================
+/* =====================================================
    HEADER
-========================================================= */
+===================================================== */
 
 .header {
+    background: var(--rosa);
+
+    color: white;
+
     position: sticky;
 
     top: 0;
 
     z-index: 1000;
 
-    background: rgba(255,255,255,.92);
-
-    backdrop-filter: blur(15px);
-
-    -webkit-backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid var(--borda);
-
     box-shadow:
-        0 4px 20px rgba(136,14,79,.04);
+        0 5px 20px rgba(80, 20, 40, 0.15);
 }
+
 
 .nav-container {
     min-height: 82px;
@@ -202,64 +167,129 @@ svg {
     align-items: center;
 
     justify-content: space-between;
+
+    gap: 30px;
 }
 
 
-/* =========================================================
+/* =====================================================
    LOGO
-========================================================= */
+===================================================== */
 
 .logo {
     display: flex;
 
     align-items: center;
 
-    gap: 11px;
+    gap: 10px;
 
-    color: var(--texto);
+    font-size: 1.35rem;
 
-    font-size: 20px;
+    font-weight: 800;
 
-    font-weight: 750;
-
-    letter-spacing: -.4px;
+    white-space: nowrap;
 }
 
-.logo > span:last-child span {
-    color: var(--rosa);
+
+.logo > span:last-child > span {
+    color: #ffd7e5;
 }
+
 
 .logo-icon {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+
+    height: 40px;
+
+    display: block;
+}
+
+
+/* =====================================================
+   OLHO
+===================================================== */
+
+.eye-wrapper {
+    width: 62px;
+
+    height: 34px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    position: relative;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    border-radius: 13px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--rosa-escuro),
-            var(--rosa),
-            var(--rosa-medio)
-        );
+    overflow: hidden;
 
     box-shadow:
-        0 7px 18px rgba(216,27,96,.22);
-}
-
-.logo-icon svg {
-    width: 28px;
+        0 3px 12px rgba(0, 0, 0, 0.18);
 }
 
 
-/* =========================================================
-   NAVEGAÇÃO
-========================================================= */
+.eye-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    width: 54px;
+
+    height: 26px;
+
+    border: 3px solid var(--rosa);
+
+    border-radius: 50%;
+}
+
+
+.eyeFollower {
+    width: 16px;
+
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: var(--rosa);
+
+    position: relative;
+
+    z-index: 2;
+
+    transition:
+        transform 0.08s ease-out;
+
+    will-change: transform;
+}
+
+
+.eyeFollower::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+
+    height: 5px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    top: 3px;
+
+    left: 3px;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
 
 nav {
     display: flex;
@@ -269,218 +299,114 @@ nav {
     gap: 6px;
 }
 
-nav a {
-    position: relative;
 
+nav a {
     padding: 9px 13px;
 
-    color: #59464f;
+    border-radius: 8px;
 
-    font-size: 14px;
+    font-weight: 600;
 
-    font-weight: 650;
-
-    border-radius: 9px;
-
-    transition: .2s ease;
+    transition:
+        background 0.2s ease;
 }
+
 
 nav a:hover {
-    color: var(--rosa);
-
-    background: var(--rosa-suave);
+    background: rgba(255,255,255,0.18);
 }
 
-nav a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 13px;
-    right: 13px;
-
-    bottom: 3px;
-
-    height: 2px;
-
-    background: var(--rosa);
-
-    transform: scaleX(0);
-
-    transform-origin: center;
-
-    transition: .2s ease;
-}
-
-nav a:hover::after {
-    transform: scaleX(1);
-}
 
 .menu-button {
     display: none;
 
-    border: none;
+    border: 0;
 
-    background: var(--rosa);
+    background: transparent;
 
     color: white;
 
-    padding: 9px 15px;
+    font-size: 30px;
 
-    border-radius: 9px;
-
-    font-weight: 700;
+    cursor: pointer;
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
 .hero {
-    position: relative;
-
-    min-height: calc(100vh - 124px);
-
-    display: flex;
-
-    align-items: center;
-
-    padding: 75px 0;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 85% 35%,
-            rgba(236,64,122,.20),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 10% 80%,
-            rgba(248,187,208,.30),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #fffafa,
-            #fff0f5
-        );
-}
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    right: -180px;
-    top: -180px;
-
-    border-radius: 50%;
+    padding: 90px 0;
 
     background:
         linear-gradient(
             135deg,
-            rgba(216,27,96,.12),
-            rgba(248,187,208,.05)
+            #fff8fb,
+            #fce4ec
         );
 }
+
 
 .hero-content {
-    position: relative;
-
-    z-index: 2;
-
     display: grid;
 
-    grid-template-columns: 1.05fr .95fr;
+    grid-template-columns:
+        1.15fr
+        0.85fr;
 
     align-items: center;
 
-    gap: 75px;
+    gap: 70px;
 }
 
 
-/* =========================================================
-   HERO TEXTO
-========================================================= */
-
 .badge {
-    display: inline-flex;
+    display: inline-block;
 
-    align-items: center;
+    background: white;
 
-    gap: 7px;
+    color: var(--rosa);
 
-    padding: 7px 13px;
+    padding: 7px 14px;
 
     border-radius: 30px;
 
-    color: var(--rosa-escuro);
+    font-size: 0.85rem;
 
-    background: rgba(248,187,208,.35);
+    font-weight: bold;
 
-    border: 1px solid rgba(173,20,87,.13);
-
-    font-size: 12px;
-
-    font-weight: 750;
-
-    text-transform: uppercase;
-
-    letter-spacing: .8px;
+    margin-bottom: 20px;
 }
 
-.badge::before {
-    content: "";
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: var(--rosa);
-}
 
 .hero h1 {
-    max-width: 700px;
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
 
-    margin: 22px 0 18px;
+    line-height: 1.05;
 
-    font-size: clamp(44px, 6vw, 72px);
-
-    line-height: 1.02;
-
-    letter-spacing: -2.8px;
-
-    color: var(--texto);
+    margin-bottom: 25px;
 }
+
 
 .hero h1 span {
     color: var(--rosa);
 }
 
-.hero-text p {
-    max-width: 610px;
 
+.hero p {
     color: var(--texto-suave);
 
-    font-size: 18px;
+    max-width: 650px;
 
-    line-height: 1.8;
+    margin-bottom: 15px;
 }
+
 
 .hero-buttons {
     display: flex;
 
-    align-items: center;
-
-    gap: 12px;
+    gap: 15px;
 
     margin-top: 30px;
 
@@ -488,263 +414,149 @@ nav a:hover::after {
 }
 
 
-/* =========================================================
+/* =====================================================
    BOTÕES
-========================================================= */
+===================================================== */
 
 .button {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
-    min-height: 48px;
+    padding: 13px 22px;
 
-    padding: 12px 20px;
+    border-radius: 10px;
 
-    border-radius: 11px;
+    font-weight: bold;
 
-    font-size: 14px;
+    cursor: pointer;
 
-    font-weight: 750;
+    border: none;
 
     transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.primary {
-    color: white;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--rosa-escuro),
-            var(--rosa),
-            var(--rosa-medio)
-        );
-
-    box-shadow:
-        0 10px 25px rgba(216,27,96,.22);
-}
-
-.primary:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 30px rgba(216,27,96,.28);
-}
-
-.secondary {
-    color: var(--rosa-escuro);
-
-    background: white;
-
-    border: 1px solid rgba(173,20,87,.22);
-
-    box-shadow: var(--sombra-pequena);
-}
-
-.secondary:hover {
-    background: var(--rosa-suave);
-
+.button:hover {
     transform: translateY(-2px);
 }
 
 
-/* =========================================================
-   CARD DO HERO
-========================================================= */
+.primary {
+    background: var(--rosa);
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(216, 27, 96, 0.25);
+}
+
+
+.secondary {
+    background: white;
+
+    color: var(--rosa);
+
+    border: 1px solid var(--borda);
+}
+
+
+.white-button {
+    background: white;
+
+    color: var(--rosa);
+}
+
+
+/* =====================================================
+   HERO CARD
+===================================================== */
 
 .hero-card {
-    position: relative;
+    background: white;
 
-    padding: 35px;
+    border-radius: 25px;
 
-    border-radius: 32px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.95),
-            rgba(255,240,245,.92)
-        );
-
-    border: 1px solid rgba(173,20,87,.13);
+    padding: 30px;
 
     box-shadow: var(--sombra);
 
-    overflow: hidden;
+    text-align: center;
 }
 
-.hero-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 190px;
-    height: 190px;
-
-    top: -90px;
-    right: -70px;
-
-    border-radius: 50%;
-
-    background: rgba(248,187,208,.32);
-}
 
 .hero-illustration {
-    position: relative;
+    max-width: 320px;
 
-    z-index: 1;
+    margin: auto;
 }
 
-.hero-illustration svg {
-    width: min(100%, 430px);
-
-    filter:
-        drop-shadow(
-            0 18px 25px rgba(136,14,79,.12)
-        );
-}
 
 .hero-card h2 {
-    position: relative;
+    color: var(--rosa);
 
-    margin-top: 12px;
+    margin-top: 10px;
 
-    color: var(--rosa-escuro);
-
-    font-size: 23px;
-}
-
-.hero-card p {
-    position: relative;
-
-    color: var(--texto-suave);
-
-    font-size: 14px;
+    margin-bottom: 8px;
 }
 
 
-/* =========================================================
-   PÁGINAS INTERNAS
-========================================================= */
+/* =====================================================
+   SEÇÕES
+===================================================== */
 
 .section {
-    min-height: calc(100vh - 124px);
-
     padding: 90px 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fffafa,
-            #fff0f5
-        );
 }
+
 
 .section.light {
-    background:
-        linear-gradient(
-            135deg,
-            #fffafa,
-            #fce4ec
-        );
+    background: white;
 }
 
-
-/* =========================================================
-   TÍTULOS
-========================================================= */
 
 .section-title {
     max-width: 780px;
 
-    margin-bottom: 48px;
+    margin: 0 auto 45px;
+
+    text-align: center;
 }
 
+
 .section-title > span {
-    display: inline-block;
-
-    margin-bottom: 8px;
-
     color: var(--rosa);
 
-    font-size: 12px;
+    font-size: 0.85rem;
 
     font-weight: 800;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
+
 
 .section-title h1,
 .section-title h2 {
-    color: var(--texto);
+    font-size: clamp(2rem, 4vw, 3rem);
 
-    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.15;
 
-    line-height: 1.1;
-
-    letter-spacing: -1.5px;
+    margin: 10px 0 18px;
 }
+
 
 .section-title p {
-    margin-top: 16px;
-
-    color: var(--texto-suave);
-
-    font-size: 17px;
-}
-
-
-/* =========================================================
-   SOBRE
-========================================================= */
-
-.info-box {
-    display: grid;
-
-    grid-template-columns: 110px 1fr;
-
-    align-items: center;
-
-    gap: 35px;
-
-    padding: 40px;
-
-    border-radius: 24px;
-
-    background: rgba(255,255,255,.78);
-
-    border: 1px solid var(--borda);
-
-    box-shadow: var(--sombra);
-}
-
-.info-illustration {
-    width: 90px;
-}
-
-.info-box h2 {
-    margin-bottom: 8px;
-
-    color: var(--rosa-escuro);
-
-    font-size: 27px;
-}
-
-.info-box p {
     color: var(--texto-suave);
 }
 
 
-/* =========================================================
+/* =====================================================
    CARDS
-========================================================= */
+===================================================== */
 
 .cards {
     display: grid;
@@ -752,118 +564,99 @@ nav a:hover::after {
     grid-template-columns:
         repeat(4, 1fr);
 
-    gap: 18px;
+    gap: 20px;
 }
 
+
 .card {
-    position: relative;
-
-    min-height: 300px;
-
-    padding: 28px;
-
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff5f8
-        );
+    background: white;
 
     border: 1px solid var(--borda);
 
+    border-radius: 18px;
+
+    padding: 28px;
+
     box-shadow:
-        0 8px 25px rgba(136,14,79,.055);
+        0 8px 25px rgba(100, 30, 60, 0.06);
 
     transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.card::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 25px;
-
-    width: 3px;
-    height: 45px;
-
-    border-radius: 0 4px 4px 0;
-
-    background:
-        linear-gradient(
-            var(--rosa),
-            var(--rosa-claro)
-        );
-}
 
 .card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-5px);
 
-    box-shadow:
-        0 20px 40px rgba(136,14,79,.11);
+    box-shadow: var(--sombra);
 }
 
-.card-icon {
-    width: 62px;
-    height: 62px;
-
-    margin-bottom: 20px;
-}
 
 .card h2 {
-    margin-bottom: 8px;
+    color: var(--rosa);
 
-    color: var(--rosa-escuro);
+    margin-bottom: 12px;
 
-    font-size: 20px;
+    font-size: 1.3rem;
 }
+
 
 .card p {
     color: var(--texto-suave);
-
-    font-size: 14px;
 }
 
 
-/* =========================================================
+/* =====================================================
+   INFO BOX
+===================================================== */
+
+.info-box {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding: 35px;
+
+    background: white;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 22px;
+
+    box-shadow: var(--sombra);
+}
+
+
+.info-illustration {
+    width: 130px;
+}
+
+
+/* =====================================================
    TECNOLOGIA
-========================================================= */
+===================================================== */
 
 .technology-section {
-    color: white;
-
     background:
-        radial-gradient(
-            circle at 90% 15%,
-            rgba(248,187,208,.35),
-            transparent 25%
-        ),
-
         linear-gradient(
             135deg,
-            #6f0b40,
-            #880e4f,
             #ad1457,
             #d81b60
         );
-}
 
-.section-title.white > span {
-    color: #f8bbd0;
-}
-
-.section-title.white h1 {
     color: white;
 }
 
+
 .section-title.white p {
-    color: rgba(255,255,255,.78);
+    color: #ffeaf2;
 }
+
 
 .technology-grid {
     display: grid;
@@ -871,130 +664,90 @@ nav a:hover::after {
     grid-template-columns:
         repeat(4, 1fr);
 
-    gap: 18px;
+    gap: 20px;
 }
 
+
 .technology {
-    min-height: 270px;
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.2);
 
     padding: 28px;
 
-    border-radius: 22px;
+    border-radius: 18px;
 
-    background:
-        rgba(255,255,255,.09);
-
-    border: 1px solid rgba(255,255,255,.18);
-
-    backdrop-filter: blur(10px);
-
-    transition: .25s ease;
+    backdrop-filter: blur(5px);
 }
 
-.technology:hover {
-    transform: translateY(-7px);
-
-    background:
-        rgba(255,255,255,.15);
-
-    border-color:
-        rgba(255,255,255,.32);
-}
-
-.technology-icon {
-    width: 62px;
-    height: 62px;
-
-    margin-bottom: 20px;
-}
 
 .technology h2 {
-    margin-bottom: 8px;
-
-    font-size: 20px;
+    margin-bottom: 10px;
 }
+
 
 .technology p {
-    color: rgba(255,255,255,.76);
-
-    font-size: 14px;
+    color: #ffeaf2;
 }
 
 
-/* =========================================================
+/* =====================================================
    RECURSOS
-========================================================= */
+===================================================== */
 
 .resource-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(2, 1fr);
 
-    gap: 18px;
+    gap: 20px;
 }
 
+
 .resource-grid article {
-    padding: 28px;
+    padding: 30px;
 
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff3f7
-        );
+    background: white;
 
     border: 1px solid var(--borda);
 
-    box-shadow:
-        0 8px 25px rgba(136,14,79,.05);
-
-    transition: .25s ease;
+    border-radius: 18px;
 }
 
-.resource-grid article:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 20px 40px rgba(136,14,79,.11);
-}
-
-.resource-image {
-    width: 80px;
-    height: 80px;
-
-    margin-bottom: 18px;
-}
 
 .resource-grid h2 {
-    color: var(--rosa-escuro);
+    color: var(--rosa);
 
-    font-size: 20px;
-
-    margin-bottom: 7px;
-}
-
-.resource-grid p {
-    color: var(--texto-suave);
-
-    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 
-/* =========================================================
+/* =====================================================
    FAQ
-========================================================= */
+===================================================== */
 
 .faq {
-    max-width: 900px;
+    max-width: 850px;
+
+    margin: auto;
 }
 
-.faq-question {
-    position: relative;
 
+.faq-question {
     width: 100%;
+
+    border: 1px solid var(--borda);
+
+    background: white;
+
+    color: var(--texto);
+
+    padding: 20px;
+
+    margin-top: 10px;
+
+    border-radius: 12px;
 
     display: flex;
 
@@ -1002,537 +755,392 @@ nav a:hover::after {
 
     justify-content: space-between;
 
-    gap: 20px;
-
-    padding: 20px 22px;
-
-    margin-top: 12px;
-
-    color: var(--texto);
-
-    background: white;
-
-    border: 1px solid var(--borda);
-
-    border-radius: 13px;
-
     text-align: left;
 
-    font-weight: 700;
+    cursor: pointer;
 
-    box-shadow:
-        0 5px 18px rgba(136,14,79,.04);
-
-    transition: .2s ease;
+    font-weight: bold;
 }
+
 
 .faq-question:hover {
-    color: var(--rosa-escuro);
-
-    border-color:
-        rgba(216,27,96,.3);
-
-    background:
-        var(--rosa-suave);
+    border-color: var(--rosa);
 }
 
-.faq-question span {
-    flex-shrink: 0;
 
-    width: 30px;
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
+.faq-symbol {
     color: var(--rosa);
 
-    background: var(--rosa-suave);
-
-    font-size: 21px;
+    font-size: 24px;
 }
+
 
 .faq-answer {
     display: none;
 
     padding: 18px 22px;
 
-    margin-top: -5px;
+    background: #fff8fb;
 
-    border: 1px solid var(--borda);
+    border-left:
+        3px solid var(--rosa);
 
-    border-top: none;
-
-    border-radius: 0 0 13px 13px;
-
-    background: #fff8fa;
-
-    color: var(--texto-suave);
+    border-radius: 0 0 10px 10px;
 }
+
 
 .faq-answer.active {
     display: block;
 }
 
 
-/* =========================================================
+.faq-answer p {
+    color: var(--texto-suave);
+}
+
+
+/* =====================================================
    GUIA
-========================================================= */
+===================================================== */
 
 .guide {
-    padding: 80px 0;
-
-    color: white;
-
     background:
         linear-gradient(
             135deg,
-            #880e4f,
-            #ad1457,
-            #d81b60
+            var(--rosa),
+            var(--rosa-escuro)
         );
+
+    color: white;
+
+    padding: 70px 0;
 }
+
 
 .guide-content {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 60px;
+    text-align: center;
 }
 
+
 .guide-label {
-    color: #f8bbd0;
+    font-size: 0.8rem;
 
-    font-size: 12px;
-
-    font-weight: 800;
+    font-weight: bold;
 
     letter-spacing: 2px;
 }
 
+
 .guide h2 {
-    max-width: 700px;
+    font-size: 2.5rem;
 
-    margin: 12px 0;
-
-    font-size: clamp(34px, 4vw, 52px);
-
-    line-height: 1.1;
-
-    letter-spacing: -1.5px;
+    margin: 10px 0;
 }
+
 
 .guide p {
     max-width: 650px;
 
-    color: rgba(255,255,255,.78);
-}
+    margin: 0 auto 25px;
 
-.guide-image {
-    width: 280px;
-
-    flex-shrink: 0;
+    color: #ffeaf2;
 }
 
 
-/* =========================================================
-   FORMULÁRIO
-========================================================= */
+/* =====================================================
+   CONTATO
+===================================================== */
 
 .contact-container {
     max-width: 850px;
 }
 
-.contact-form {
-    display: flex;
 
-    flex-direction: column;
+.contact-form {
+    background: white;
 
     padding: 35px;
 
-    border-radius: 24px;
-
-    background:
-        rgba(255,255,255,.82);
+    border-radius: 20px;
 
     border: 1px solid var(--borda);
 
     box-shadow: var(--sombra);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
 }
+
 
 .contact-form label {
-    margin: 12px 0 6px;
+    font-weight: bold;
 
-    color: var(--rosa-escuro);
-
-    font-size: 14px;
-
-    font-weight: 750;
+    margin-top: 10px;
 }
+
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
 
-    padding: 14px 16px;
-
-    color: var(--texto);
-
-    background: white;
-
-    border: 1px solid #e6c5d1;
+    border: 1px solid #dfc7d0;
 
     border-radius: 10px;
 
-    outline: none;
+    padding: 14px;
 
-    transition: .2s ease;
+    background: white;
+
+    color: var(--texto);
+
+    outline: none;
 }
+
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--rosa);
 
     box-shadow:
-        0 0 0 4px rgba(216,27,96,.09);
+        0 0 0 3px #d81b6020;
 }
 
+
 .contact-form textarea {
-    min-height: 160px;
+    min-height: 180px;
 
     resize: vertical;
 }
 
-.contact-form .button {
+
+.contact-form button {
     margin-top: 20px;
 }
 
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer {
-    padding: 40px 0;
+    background: #24151c;
 
     color: white;
 
-    background:
-        linear-gradient(
-            135deg,
-            #2a101c,
-            #45182c,
-            #2a101c
-        );
+    padding: 40px 0;
 }
+
 
 .footer-content {
     display: flex;
 
-    align-items: center;
-
     justify-content: space-between;
 
     gap: 30px;
+
+    flex-wrap: wrap;
 }
+
 
 footer strong {
-    font-size: 20px;
+    color: #ffb4cc;
 }
+
 
 footer p {
-    color: #d8c1ca;
-
-    font-size: 13px;
+    color: #d9c2cb;
 }
 
 
-/* =========================================================
-   BOTÃO VOLTAR AO TOPO
-========================================================= */
+/* =====================================================
+   BOTÃO TOPO
+===================================================== */
 
 #topButton {
     position: fixed;
 
-    right: 25px;
-    bottom: 25px;
+    right: 20px;
+
+    bottom: 20px;
 
     width: 48px;
+
     height: 48px;
 
-    display: none;
+    border-radius: 50%;
 
     border: none;
 
-    border-radius: 14px;
+    background: var(--rosa);
 
     color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--rosa-escuro),
-            var(--rosa)
-        );
 
     font-size: 22px;
 
-    box-shadow:
-        0 10px 25px rgba(136,14,79,.25);
+    cursor: pointer;
 
-    z-index: 1000;
+    opacity: 0;
 
-    transition: .2s;
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 900;
 }
+
 
 #topButton.show {
-    display: block;
+    opacity: 1;
+
+    pointer-events: auto;
 }
 
-#topButton:hover {
-    transform: translateY(-3px);
-}
 
-
-/* =========================================================
+/* =====================================================
    MODO ESCURO
-========================================================= */
+===================================================== */
 
 body.dark {
-    color: #fff3f7;
+    --fundo: #1b1116;
 
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(216,27,96,.18),
-            transparent 25%
-        ),
+    --branco: #25181e;
 
-        #170c11;
+    --texto: #f8eaf0;
+
+    --texto-suave: #d5c2ca;
+
+    --borda: #523440;
 }
 
-body.dark .header {
-    background: rgba(28,14,20,.94);
 
-    border-color: rgba(255,255,255,.08);
-}
-
-body.dark nav a {
-    color: #f5e5ea;
-}
-
-body.dark nav a:hover {
-    color: white;
-
-    background: rgba(216,27,96,.18);
-}
-
-body.dark .hero,
-body.dark .section,
-body.dark .section.light {
-    background:
-        linear-gradient(
-            135deg,
-            #170c11,
-            #2b131d
-        );
-}
-
-body.dark .hero h1,
-body.dark .section-title h1,
-body.dark .section-title h2 {
-    color: white;
-}
-
-body.dark .hero-text p,
-body.dark .section-title p {
-    color: #d9c6ce;
-}
-
-body.dark .hero-card,
-body.dark .info-box,
 body.dark .card,
-body.dark .resource-grid article,
+body.dark .hero-card,
+body.dark .contact-form,
 body.dark .faq-question,
-body.dark .contact-form {
-    background:
-        linear-gradient(
-            145deg,
-            #29161f,
-            #361b27
-        );
+body.dark .resource-grid article,
+body.dark .info-box {
+    background: #25181e;
 
-    border-color:
-        rgba(255,255,255,.08);
-
-    color: white;
+    color: var(--texto);
 }
 
-body.dark .card h2,
-body.dark .resource-grid h2,
-body.dark .info-box h2 {
-    color: #f8bbd0;
-}
-
-body.dark .card p,
-body.dark .resource-grid p,
-body.dark .info-box p {
-    color: #d8c5cd;
-}
 
 body.dark .faq-answer {
-    background: #28151e;
-
-    color: #d8c5cd;
+    background: #211419;
 }
+
+
+body.dark .secondary {
+    background: #25181e;
+}
+
 
 body.dark .contact-form input,
 body.dark .contact-form textarea {
+    background: #1b1116;
+
     color: white;
 
-    background: #211018;
-
-    border-color: #603442;
-}
-
-body.dark .contact-form label {
-    color: #f8bbd0;
+    border-color: #60404c;
 }
 
 
-/* =========================================================
+/* =====================================================
    ALTO CONTRASTE
-========================================================= */
+===================================================== */
 
 body.high-contrast {
-    color: white;
-
     background: black;
+
+    color: white;
 }
 
-body.high-contrast .header,
-body.high-contrast .hero,
-body.high-contrast .section,
-body.high-contrast .section.light,
-body.high-contrast .hero-card,
+
 body.high-contrast .card,
-body.high-contrast .resource-grid article,
-body.high-contrast .info-box,
+body.high-contrast .hero-card,
+body.high-contrast .contact-form,
 body.high-contrast .faq-question,
-body.high-contrast .contact-form {
+body.high-contrast .resource-grid article,
+body.high-contrast .info-box {
     background: black;
 
     color: white;
 
-    border-color: white;
+    border: 2px solid white;
 }
 
-body.high-contrast nav a,
-body.high-contrast .hero h1,
-body.high-contrast .section-title h1,
-body.high-contrast .section-title h2,
-body.high-contrast .card h2,
-body.high-contrast .resource-grid h2 {
+
+body.high-contrast p,
+body.high-contrast .card p,
+body.high-contrast .section-title p,
+body.high-contrast .faq-answer p {
     color: white;
 }
 
-body.high-contrast .hero h1 span,
-body.high-contrast .section-title > span {
-    color: yellow;
-}
 
-body.high-contrast .primary {
-    color: black;
-
-    background: yellow;
-
-    border-color: yellow;
-}
-
-body.high-contrast .secondary {
-    color: white;
-
-    background: black;
-
-    border-color: white;
-}
-
-body.high-contrast .contact-form input,
-body.high-contrast .contact-form textarea {
-    color: white;
-
-    background: black;
-
-    border-color: white;
+body.high-contrast a,
+body.high-contrast h1,
+body.high-contrast h2 {
+    color: #ffff00;
 }
 
 
-/* =========================================================
+/* =====================================================
    ESPAÇAMENTO
-========================================================= */
+===================================================== */
 
 body.extra-spacing {
-    line-height: 2.1;
+    line-height: 2;
 
-    letter-spacing: .06em;
+    letter-spacing: 0.05em;
+
+    word-spacing: 0.12em;
 }
 
-body.extra-spacing nav a {
-    margin-left: 4px;
-}
 
+/* =====================================================
+   RESPONSIVO
+===================================================== */
 
-/* =========================================================
-   RESPONSIVIDADE
-========================================================= */
-
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
 
     .hero-content {
         grid-template-columns: 1fr;
-
-        gap: 45px;
     }
 
-    .hero-text {
-        max-width: 800px;
-    }
-
-    .hero-card {
-        max-width: 650px;
-
-        margin: auto;
-    }
-
-    .cards,
-    .technology-grid,
-    .resource-grid {
+    .cards {
         grid-template-columns:
             repeat(2, 1fr);
     }
+
+    .technology-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
 }
 
 
-@media (max-width: 850px) {
+@media (max-width: 700px) {
 
     .menu-button {
         display: block;
     }
 
+
     nav {
         position: absolute;
 
-        left: 5%;
-        right: 5%;
+        top: 100%;
 
-        top: 74px;
+        left: 0;
+
+        width: 100%;
+
+        background: var(--rosa);
 
         display: none;
 
@@ -1540,99 +1148,21 @@ body.extra-spacing nav a {
 
         align-items: stretch;
 
-        padding: 12px;
-
-        background:
-            rgba(255,255,255,.98);
-
-        border: 1px solid var(--borda);
-
-        border-radius: 14px;
-
-        box-shadow:
-            0 20px 40px rgba(136,14,79,.13);
+        padding: 10px 5%;
     }
+
 
     nav.active {
         display: flex;
     }
 
+
     nav a {
-        padding: 12px 15px;
+        width: 100%;
+
+        padding: 14px;
     }
 
-    nav a::after {
-        display: none;
-    }
-
-    .info-box {
-        grid-template-columns: 1fr;
-    }
-
-    .guide-content {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .accessibility-content {
-        justify-content: center;
-
-        padding: 5px 0;
-    }
-
-    .nav-container {
-        min-height: 70px;
-    }
-
-    nav {
-        top: 70px;
-    }
-
-    .hero {
-        min-height: auto;
-
-        padding: 60px 0;
-    }
-
-    .hero h1 {
-        font-size: 43px;
-
-        letter-spacing: -2px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .hero-card {
-        padding: 22px;
-    }
-
-    .section {
-        min-height: auto;
-
-        padding: 65px 0;
-    }
-
-    .section-title {
-        margin-bottom: 35px;
-    }
-
-    .section-title h1,
-    .section-title h2 {
-        font-size: 36px;
-    }
 
     .cards,
     .technology-grid,
@@ -1640,36 +1170,31 @@ body.extra-spacing nav a {
         grid-template-columns: 1fr;
     }
 
-    .card,
-    .technology,
-    .resource-grid article {
-        min-height: auto;
+
+    .info-box {
+        grid-template-columns: 1fr;
+
+        text-align: center;
     }
 
-    .guide {
-        padding: 65px 0;
+
+    .info-illustration {
+        margin: auto;
     }
 
-    .guide h2 {
-        font-size: 36px;
+
+    .accessibility-content {
+        justify-content: center;
     }
 
-    .guide-image {
-        width: 210px;
+
+    .hero {
+        padding: 60px 0;
     }
 
-    .contact-form {
-        padding: 24px 18px;
+
+    .section {
+        padding: 60px 0;
     }
 
-    .footer-content {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    #topButton {
-        right: 18px;
-        bottom: 18px;
-    }
 }
