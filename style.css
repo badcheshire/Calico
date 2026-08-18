@@ -1029,44 +1029,363 @@ body.dark .contact-form textarea {
 
 /* =====================================================
    ALTO CONTRASTE
+   MODO TOTAL
 ===================================================== */
 
 body.high-contrast {
-    background: black;
 
-    color: white;
+    --fundo: #ffffff;
+    --branco: #ffffff;
+
+    --texto: #000000;
+    --texto-suave: #000000;
+
+    --borda: #000000;
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
 }
 
+
+/* FUNDO DE TODA A PÁGINA */
+
+body.high-contrast,
+body.high-contrast main,
+body.high-contrast section,
+body.high-contrast article,
+body.high-contrast .container,
+body.high-contrast .hero,
+body.high-contrast .section,
+body.high-contrast .section.light {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+}
+
+
+/* CABEÇALHO */
+
+body.high-contrast .header {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border-bottom: 3px solid #000000;
+}
+
+
+body.high-contrast .logo {
+
+    color: #000000 !important;
+}
+
+
+body.high-contrast nav a {
+
+    color: #000000 !important;
+}
+
+
+body.high-contrast nav a:hover {
+
+    background: #000000 !important;
+
+    color: #ffffff !important;
+}
+
+
+body.high-contrast .menu-button {
+
+    color: #000000 !important;
+}
+
+
+/* BARRA DE ACESSIBILIDADE */
+
+body.high-contrast .accessibility-bar {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border-bottom: 2px solid #000000;
+}
+
+
+body.high-contrast
+.accessibility-content button {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+}
+
+
+body.high-contrast
+.accessibility-content button:hover {
+
+    background: #000000 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* HERO */
+
+body.high-contrast .hero {
+
+    background: #ffffff !important;
+}
+
+
+body.high-contrast .hero h1,
+body.high-contrast .hero p {
+
+    color: #000000 !important;
+}
+
+
+body.high-contrast .hero h1 span {
+
+    color: #000000 !important;
+
+    text-decoration: underline;
+}
+
+
+/* BADGE */
+
+body.high-contrast .badge {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000;
+}
+
+
+/* CARDS */
 
 body.high-contrast .card,
 body.high-contrast .hero-card,
-body.high-contrast .contact-form,
-body.high-contrast .faq-question,
-body.high-contrast .resource-grid article,
-body.high-contrast .info-box {
-    background: black;
+body.high-contrast .info-box,
+body.high-contrast
+.resource-grid article,
+body.high-contrast .contact-form {
 
-    color: white;
+    background: #ffffff !important;
 
-    border: 2px solid white;
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+
+    box-shadow: none !important;
 }
 
 
-body.high-contrast p,
+body.high-contrast .card h2,
+body.high-contrast .hero-card h2,
+body.high-contrast .resource-grid h2 {
+
+    color: #000000 !important;
+}
+
+
 body.high-contrast .card p,
-body.high-contrast .section-title p,
+body.high-contrast .hero-card p,
+body.high-contrast .resource-grid p {
+
+    color: #000000 !important;
+}
+
+
+/* SEÇÕES ROSA */
+
+body.high-contrast .technology-section,
+body.high-contrast .guide {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border-top: 2px solid #000000;
+
+    border-bottom: 2px solid #000000;
+}
+
+
+body.high-contrast
+.technology,
+body.high-contrast
+.guide-content {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+}
+
+
+body.high-contrast
+.technology h2,
+body.high-contrast
+.technology p,
+body.high-contrast
+.guide h2,
+body.high-contrast
+.guide p,
+body.high-contrast
+.guide-label {
+
+    color: #000000 !important;
+}
+
+
+/* BOTÕES */
+
+body.high-contrast .button,
+body.high-contrast .primary,
+body.high-contrast .secondary,
+body.high-contrast .white-button {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+
+    box-shadow: none !important;
+}
+
+
+body.high-contrast .button:hover {
+
+    background: #000000 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* FAQ */
+
+body.high-contrast .faq-question {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+}
+
+
+body.high-contrast .faq-symbol {
+
+    color: #000000 !important;
+}
+
+
+body.high-contrast .faq-answer {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+
+    border-top: none;
+}
+
+
 body.high-contrast .faq-answer p {
-    color: white;
+
+    color: #000000 !important;
 }
 
 
-body.high-contrast a,
-body.high-contrast h1,
-body.high-contrast h2 {
-    color: #ffff00;
+/* FORMULÁRIO */
+
+body.high-contrast
+.contact-form input,
+body.high-contrast
+.contact-form textarea {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
 }
 
 
+body.high-contrast
+.contact-form label {
+
+    color: #000000 !important;
+}
+
+
+/* RODAPÉ */
+
+body.high-contrast footer {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border-top: 3px solid #000000;
+}
+
+
+body.high-contrast footer strong,
+body.high-contrast footer p {
+
+    color: #000000 !important;
+}
+
+
+/* BOTÃO VOLTAR AO TOPO */
+
+body.high-contrast #topButton {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+}
+
+
+/* OLHO */
+
+body.high-contrast .eye-wrapper {
+
+    background: #ffffff !important;
+
+    border: 2px solid #000000;
+}
+
+
+body.high-contrast .eye-wrapper::before {
+
+    border-color: #000000 !important;
+}
+
+
+body.high-contrast .eyeFollower {
+
+    background: #000000 !important;
+}
+
+
+body.high-contrast .eyeFollower::after {
+
+    background: #ffffff !important;
+}
 /* =====================================================
    ESPAÇAMENTO
 ===================================================== */
