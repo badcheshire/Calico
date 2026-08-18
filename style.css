@@ -1,14 +1,8 @@
-/* =====================================================
-   CONFIGURAÇÕES
-===================================================== */
-
 :root {
-    --tamanho: 16px;
-
     --rosa: #d81b60;
+    --rosa-escuro: #ad1457;
     --rosa-claro: #fce4ec;
     --rosa-medio: #f8bbd0;
-    --rosa-escuro: #ad1457;
 
     --fundo: #fff8fb;
     --branco: #ffffff;
@@ -16,12 +10,15 @@
     --texto: #3b2630;
     --texto-suave: #6e5962;
 
-    --borda: #f0d7e0;
+    --borda: #efd7e0;
 
-    --sombra:
-        0 15px 40px rgba(100, 30, 60, 0.10);
+    --tamanho-texto: 16px;
 }
 
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
     box-sizing: border-box;
@@ -34,13 +31,16 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 
     background: var(--fundo);
+
     color: var(--texto);
 
-    font-size: 16px;
+    font-size: var(--tamanho-texto);
+
     line-height: 1.7;
 
     transition:
@@ -48,24 +48,25 @@ body {
         color 0.3s ease;
 }
 
-body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
 
-    background: var(--fundo);
-
-    color: var(--texto);
-
-    font-size: 1rem;
-
-    line-height: 1.7;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease;
+a {
+    color: inherit;
+    text-decoration: none;
 }
+
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+img,
+svg {
+    max-width: 100%;
+}
+
 
 /* =====================================================
    CONTAINER
@@ -79,17 +80,17 @@ body {
 
 
 /* =====================================================
-   ACESSIBILIDADE
+   BARRA DE ACESSIBILIDADE
 ===================================================== */
 
 .accessibility-bar {
-    background: #24151c;
+    background: #fff8fb;
 
-    color: white;
+    color: #553641;
 
-    padding: 8px 0;
+    border-bottom: 1px solid #f4dce5;
 
-    font-size: 14px;
+    padding: 6px 0;
 }
 
 
@@ -100,46 +101,66 @@ body {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: flex-end;
 
-    gap: 8px;
+    align-items: center;
+
+    gap: 6px;
 
     flex-wrap: wrap;
 }
 
 
+.accessibility-content span {
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    margin-right: 5px;
+}
+
+
 .accessibility-content button {
-    border: 1px solid #ffffff55;
+    min-width: 36px;
 
-    background: #ffffff15;
+    border: 1px solid #e6c6d2;
 
-    color: white;
+    background: white;
+
+    color: #553641;
 
     border-radius: 6px;
 
-    padding: 5px 10px;
+    padding: 5px 9px;
 
     cursor: pointer;
+
+    font-size: 0.8rem;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
 .accessibility-content button:hover {
-    background: white;
+    background: var(--rosa);
 
-    color: #24151c;
+    color: white;
+
+    border-color: var(--rosa);
 }
 
 
 /* =====================================================
-   HEADER
+   CABEÇALHO
 ===================================================== */
 
 .header {
-    background: var(--rosa);
+    background: white;
 
-    color: white;
+    color: var(--texto);
 
     position: sticky;
 
@@ -147,21 +168,21 @@ body {
 
     z-index: 1000;
 
+    border-bottom: 1px solid var(--borda);
+
     box-shadow:
-        0 5px 20px rgba(80, 20, 40, 0.15);
+        0 4px 18px rgba(80, 20, 40, 0.07);
 }
 
 
 .nav-container {
-    min-height: 82px;
+    min-height: 76px;
 
     display: flex;
 
     align-items: center;
 
-    justify-content: space-between;
-
-    gap: 30px;
+    gap: 25px;
 }
 
 
@@ -176,25 +197,40 @@ body {
 
     gap: 10px;
 
-    font-size: 1.35rem;
+    color: var(--rosa);
+
+    font-size: 1.25rem;
 
     font-weight: 800;
 
     white-space: nowrap;
+
+    margin-right: auto;
 }
 
 
 .logo > span:last-child > span {
-    color: #ffd7e5;
+    color: var(--rosa-escuro);
 }
 
 
 .logo-icon {
-    width: 40px;
+    width: 38px;
 
-    height: 40px;
+    height: 38px;
 
-    display: block;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.logo-icon svg {
+    width: 38px;
+
+    height: 38px;
 }
 
 
@@ -203,11 +239,13 @@ body {
 ===================================================== */
 
 .eye-wrapper {
-    width: 62px;
+    width: 54px;
 
-    height: 34px;
+    height: 30px;
 
     background: white;
+
+    border: 2px solid var(--rosa);
 
     border-radius: 50%;
 
@@ -221,8 +259,7 @@ body {
 
     overflow: hidden;
 
-    box-shadow:
-        0 3px 12px rgba(0, 0, 0, 0.18);
+    flex-shrink: 0;
 }
 
 
@@ -231,24 +268,24 @@ body {
 
     position: absolute;
 
-    width: 54px;
+    width: 43px;
 
-    height: 26px;
+    height: 21px;
 
-    border: 3px solid var(--rosa);
+    border: 2px solid var(--rosa);
 
     border-radius: 50%;
 }
 
 
 .eyeFollower {
-    width: 16px;
+    width: 13px;
 
-    height: 16px;
-
-    border-radius: 50%;
+    height: 13px;
 
     background: var(--rosa);
+
+    border-radius: 50%;
 
     position: relative;
 
@@ -266,17 +303,17 @@ body {
 
     position: absolute;
 
-    width: 5px;
+    width: 4px;
 
-    height: 5px;
+    height: 4px;
 
     background: white;
 
     border-radius: 50%;
 
-    top: 3px;
+    top: 2px;
 
-    left: 3px;
+    left: 2px;
 }
 
 
@@ -289,39 +326,89 @@ nav {
 
     align-items: center;
 
-    gap: 6px;
+    gap: 3px;
 }
 
 
 nav a {
-    padding: 9px 13px;
+    position: relative;
+
+    padding: 9px 12px;
 
     border-radius: 8px;
+
+    color: #553641;
+
+    font-size: 0.92rem;
 
     font-weight: 600;
 
     transition:
+        color 0.2s ease,
         background 0.2s ease;
 }
 
 
 nav a:hover {
-    background: rgba(255,255,255,0.18);
+    color: var(--rosa);
+
+    background: #fff1f6;
 }
 
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+
+    right: 12px;
+
+    bottom: 4px;
+
+    height: 2px;
+
+    background: var(--rosa);
+
+    transform: scaleX(0);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
 
 .menu-button {
     display: none;
 
-    border: 0;
+    width: 44px;
 
-    background: transparent;
+    height: 44px;
 
-    color: white;
+    border: 1px solid var(--borda);
 
-    font-size: 30px;
+    border-radius: 10px;
+
+    background: #fff8fb;
+
+    color: var(--rosa);
+
+    font-size: 25px;
 
     cursor: pointer;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
 
@@ -370,6 +457,8 @@ nav a:hover {
     font-weight: bold;
 
     margin-bottom: 20px;
+
+    border: 1px solid var(--borda);
 }
 
 
@@ -390,7 +479,7 @@ nav a:hover {
 .hero p {
     color: var(--texto-suave);
 
-    max-width: 650px;
+    max-width: 700px;
 
     margin-bottom: 15px;
 }
@@ -476,9 +565,12 @@ nav a:hover {
 
     padding: 30px;
 
-    box-shadow: var(--sombra);
+    box-shadow:
+        0 15px 40px rgba(100, 30, 60, 0.10);
 
     text-align: center;
+
+    border: 1px solid var(--borda);
 }
 
 
@@ -503,7 +595,7 @@ nav a:hover {
 ===================================================== */
 
 .section {
-    padding: 90px 0;
+    padding: 85px 0;
 }
 
 
@@ -582,7 +674,8 @@ nav a:hover {
 .card:hover {
     transform: translateY(-5px);
 
-    box-shadow: var(--sombra);
+    box-shadow:
+        0 15px 35px rgba(100, 30, 60, 0.10);
 }
 
 
@@ -601,32 +694,120 @@ nav a:hover {
 
 
 /* =====================================================
-   INFO BOX
+   PÁGINAS INTERNAS
 ===================================================== */
 
-.info-box {
-    display: grid;
+.page-hero {
+    padding: 70px 0;
 
-    grid-template-columns: 150px 1fr;
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fb,
+            #fce4ec
+        );
 
-    align-items: center;
-
-    gap: 35px;
-
-    padding: 35px;
-
-    background: white;
-
-    border: 1px solid var(--borda);
-
-    border-radius: 22px;
-
-    box-shadow: var(--sombra);
+    text-align: center;
 }
 
 
-.info-illustration {
-    width: 130px;
+.page-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+
+    color: var(--texto);
+}
+
+
+.page-hero h1 span {
+    color: var(--rosa);
+}
+
+
+.page-hero p {
+    max-width: 750px;
+
+    margin: auto;
+
+    color: var(--texto-suave);
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.content {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.content h2 {
+    color: var(--rosa);
+
+    margin:
+        35px
+        0
+        12px;
+}
+
+
+.content h3 {
+    margin-top: 25px;
+
+    margin-bottom: 8px;
+}
+
+
+.content p {
+    color: var(--texto-suave);
+
+    margin-bottom: 18px;
+}
+
+
+.content ul {
+    margin:
+        15px
+        0
+        25px
+        25px;
+}
+
+
+.content li {
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   CAIXA DE INFORMAÇÃO
+===================================================== */
+
+.info-box {
+    padding: 30px;
+
+    background: white;
+
+    border:
+        1px solid var(--borda);
+
+    border-left:
+        5px solid var(--rosa);
+
+    border-radius: 15px;
+
+    margin: 30px 0;
+}
+
+
+.info-box strong {
+    color: var(--rosa);
 }
 
 
@@ -634,53 +815,39 @@ nav a:hover {
    TECNOLOGIA
 ===================================================== */
 
-.technology-section {
-    background:
-        linear-gradient(
-            135deg,
-            #ad1457,
-            #d81b60
-        );
-
-    color: white;
-}
-
-
-.section-title.white p {
-    color: #ffeaf2;
-}
-
-
 .technology-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(2, 1fr);
 
     gap: 20px;
 }
 
 
 .technology {
-    background: rgba(255,255,255,0.12);
+    background: white;
 
-    border: 1px solid rgba(255,255,255,0.2);
-
-    padding: 28px;
+    border: 1px solid var(--borda);
 
     border-radius: 18px;
 
-    backdrop-filter: blur(5px);
+    padding: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(100, 30, 60, 0.06);
 }
 
 
 .technology h2 {
+    color: var(--rosa);
+
     margin-bottom: 10px;
 }
 
 
 .technology p {
-    color: #ffeaf2;
+    color: var(--texto-suave);
 }
 
 
@@ -778,7 +945,8 @@ nav a:hover {
     border-left:
         3px solid var(--rosa);
 
-    border-radius: 0 0 10px 10px;
+    border-radius:
+        0 0 10px 10px;
 }
 
 
@@ -789,6 +957,85 @@ nav a:hover {
 
 .faq-answer p {
     color: var(--texto-suave);
+}
+
+
+/* =====================================================
+   CONTATO
+===================================================== */
+
+.contact-container {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.contact-form {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid var(--borda);
+
+    box-shadow:
+        0 15px 40px rgba(100, 30, 60, 0.08);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.contact-form label {
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    border:
+        1px solid #dfc7d0;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    background: white;
+
+    color: var(--texto);
+
+    outline: none;
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--rosa);
+
+    box-shadow:
+        0 0 0 3px #d81b6020;
+}
+
+
+.contact-form textarea {
+    min-height: 180px;
+
+    resize: vertical;
+}
+
+
+.contact-form button {
+    margin-top: 20px;
 }
 
 
@@ -834,83 +1081,12 @@ nav a:hover {
 .guide p {
     max-width: 650px;
 
-    margin: 0 auto 25px;
+    margin:
+        0
+        auto
+        25px;
 
     color: #ffeaf2;
-}
-
-
-/* =====================================================
-   CONTATO
-===================================================== */
-
-.contact-container {
-    max-width: 850px;
-}
-
-
-.contact-form {
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 20px;
-
-    border: 1px solid var(--borda);
-
-    box-shadow: var(--sombra);
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 10px;
-}
-
-
-.contact-form label {
-    font-weight: bold;
-
-    margin-top: 10px;
-}
-
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-
-    border: 1px solid #dfc7d0;
-
-    border-radius: 10px;
-
-    padding: 14px;
-
-    background: white;
-
-    color: var(--texto);
-
-    outline: none;
-}
-
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--rosa);
-
-    box-shadow:
-        0 0 0 3px #d81b6020;
-}
-
-
-.contact-form textarea {
-    min-height: 180px;
-
-    resize: vertical;
-}
-
-
-.contact-form button {
-    margin-top: 20px;
 }
 
 
@@ -949,7 +1125,7 @@ footer p {
 
 
 /* =====================================================
-   BOTÃO TOPO
+   VOLTAR AO TOPO
 ===================================================== */
 
 #topButton {
@@ -1009,25 +1185,77 @@ body.dark {
 }
 
 
+body.dark .accessibility-bar {
+    background: #1b1116;
+
+    color: #f8eaf0;
+
+    border-color: #523440;
+}
+
+
+body.dark .header {
+    background: #25181e;
+
+    color: #f8eaf0;
+
+    border-color: #523440;
+}
+
+
+body.dark nav a {
+    color: #f8eaf0;
+}
+
+
+body.dark nav a:hover {
+    background: #3b252e;
+
+    color: white;
+}
+
+
+body.dark .eye-wrapper {
+    background: #25181e;
+}
+
+
+body.dark .hero,
+body.dark .page-hero {
+    background: #211419;
+}
+
+
 body.dark .card,
 body.dark .hero-card,
-body.dark .contact-form,
-body.dark .faq-question,
+body.dark .technology,
 body.dark .resource-grid article,
+body.dark .contact-form,
 body.dark .info-box {
     background: #25181e;
 
     color: var(--texto);
+
+    border-color: #523440;
+}
+
+
+body.dark .section.light {
+    background: #1b1116;
+}
+
+
+body.dark .faq-question {
+    background: #25181e;
+
+    color: var(--texto);
+
+    border-color: #523440;
 }
 
 
 body.dark .faq-answer {
     background: #211419;
-}
-
-
-body.dark .secondary {
-    background: #25181e;
 }
 
 
@@ -1042,364 +1270,146 @@ body.dark .contact-form textarea {
 
 
 /* =====================================================
-   ALTO CONTRASTE
-   MODO TOTAL
+   ALTO CONTRASTE — TUDO BRANCO/PRETO
 ===================================================== */
-
-body.high-contrast {
-
-    --fundo: #ffffff;
-    --branco: #ffffff;
-
-    --texto: #000000;
-    --texto-suave: #000000;
-
-    --borda: #000000;
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-}
-
-
-/* FUNDO DE TODA A PÁGINA */
 
 body.high-contrast,
 body.high-contrast main,
 body.high-contrast section,
 body.high-contrast article,
-body.high-contrast .container,
 body.high-contrast .hero,
+body.high-contrast .page-hero,
 body.high-contrast .section,
-body.high-contrast .section.light {
+body.high-contrast .section.light,
+body.high-contrast .guide,
+body.high-contrast .technology-section {
+    background: white !important;
 
-    background: #ffffff !important;
-
-    color: #000000 !important;
+    color: black !important;
 }
 
 
-/* CABEÇALHO */
-
-body.high-contrast .header {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border-bottom: 3px solid #000000;
-}
-
-
-body.high-contrast .logo {
-
-    color: #000000 !important;
-}
-
-
-body.high-contrast nav a {
-
-    color: #000000 !important;
-}
-
-
-body.high-contrast nav a:hover {
-
-    background: #000000 !important;
-
-    color: #ffffff !important;
-}
-
-
-body.high-contrast .menu-button {
-
-    color: #000000 !important;
-}
-
-
-/* BARRA DE ACESSIBILIDADE */
-
-body.high-contrast .accessibility-bar {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border-bottom: 2px solid #000000;
-}
-
-
-body.high-contrast
-.accessibility-content button {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border: 2px solid #000000 !important;
-}
-
-
-body.high-contrast
-.accessibility-content button:hover {
-
-    background: #000000 !important;
-
-    color: #ffffff !important;
-}
-
-
-/* HERO */
-
-body.high-contrast .hero {
-
-    background: #ffffff !important;
-}
-
-
-body.high-contrast .hero h1,
-body.high-contrast .hero p {
-
-    color: #000000 !important;
-}
-
-
-body.high-contrast .hero h1 span {
-
-    color: #000000 !important;
-
-    text-decoration: underline;
-}
-
-
-/* BADGE */
-
-body.high-contrast .badge {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border: 2px solid #000000;
-}
-
-
-/* CARDS */
-
-body.high-contrast .card,
-body.high-contrast .hero-card,
-body.high-contrast .info-box,
-body.high-contrast
-.resource-grid article,
-body.high-contrast .contact-form {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border: 2px solid #000000 !important;
-
+body.high-contrast * {
     box-shadow: none !important;
 }
 
 
-body.high-contrast .card h2,
-body.high-contrast .hero-card h2,
-body.high-contrast .resource-grid h2 {
-
-    color: #000000 !important;
+body.high-contrast p,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast span,
+body.high-contrast li,
+body.high-contrast label {
+    color: black !important;
 }
 
 
-body.high-contrast .card p,
-body.high-contrast .hero-card p,
-body.high-contrast .resource-grid p {
+body.high-contrast .header,
+body.high-contrast footer,
+body.high-contrast .accessibility-bar {
+    background: white !important;
 
-    color: #000000 !important;
+    color: black !important;
+
+    border-color: black !important;
 }
 
 
-/* SEÇÕES ROSA */
-
-body.high-contrast .technology-section,
-body.high-contrast .guide {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border-top: 2px solid #000000;
-
-    border-bottom: 2px solid #000000;
+body.high-contrast nav a,
+body.high-contrast .logo {
+    color: black !important;
 }
 
 
-body.high-contrast
-.technology,
-body.high-contrast
-.guide-content {
+body.high-contrast nav a:hover {
+    background: black !important;
 
-    background: #ffffff !important;
-
-    color: #000000 !important;
+    color: white !important;
 }
 
 
-body.high-contrast
-.technology h2,
-body.high-contrast
-.technology p,
-body.high-contrast
-.guide h2,
-body.high-contrast
-.guide p,
-body.high-contrast
-.guide-label {
+body.high-contrast .card,
+body.high-contrast .hero-card,
+body.high-contrast .technology,
+body.high-contrast .resource-grid article,
+body.high-contrast .contact-form,
+body.high-contrast .info-box,
+body.high-contrast .faq-question,
+body.high-contrast .faq-answer {
+    background: white !important;
 
-    color: #000000 !important;
+    color: black !important;
+
+    border: 2px solid black !important;
 }
 
-
-/* BOTÕES */
 
 body.high-contrast .button,
 body.high-contrast .primary,
 body.high-contrast .secondary,
 body.high-contrast .white-button {
+    background: white !important;
 
-    background: #ffffff !important;
+    color: black !important;
 
-    color: #000000 !important;
-
-    border: 2px solid #000000 !important;
-
-    box-shadow: none !important;
+    border: 2px solid black !important;
 }
 
 
 body.high-contrast .button:hover {
+    background: black !important;
 
-    background: #000000 !important;
-
-    color: #ffffff !important;
-}
-
-
-/* FAQ */
-
-body.high-contrast .faq-question {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border: 2px solid #000000 !important;
-}
-
-
-body.high-contrast .faq-symbol {
-
-    color: #000000 !important;
-}
-
-
-body.high-contrast .faq-answer {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border: 2px solid #000000 !important;
-
-    border-top: none;
-}
-
-
-body.high-contrast .faq-answer p {
-
-    color: #000000 !important;
-}
-
-
-/* FORMULÁRIO */
-
-body.high-contrast
-.contact-form input,
-body.high-contrast
-.contact-form textarea {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border: 2px solid #000000 !important;
+    color: white !important;
 }
 
 
 body.high-contrast
-.contact-form label {
+.accessibility-content button {
+    background: white !important;
 
-    color: #000000 !important;
+    color: black !important;
+
+    border: 2px solid black !important;
 }
 
 
-/* RODAPÉ */
+body.high-contrast
+.accessibility-content button:hover {
+    background: black !important;
 
-body.high-contrast footer {
+    color: white !important;
+}
 
-    background: #ffffff !important;
 
-    color: #000000 !important;
+body.high-contrast .eye-wrapper {
+    background: white !important;
 
-    border-top: 3px solid #000000;
+    border: 2px solid black !important;
+}
+
+
+body.high-contrast .eye-wrapper::before {
+    border-color: black !important;
+}
+
+
+body.high-contrast .eyeFollower {
+    background: black !important;
+}
+
+
+body.high-contrast .eyeFollower::after {
+    background: white !important;
 }
 
 
 body.high-contrast footer strong,
 body.high-contrast footer p {
-
-    color: #000000 !important;
+    color: black !important;
 }
 
 
-/* BOTÃO VOLTAR AO TOPO */
-
-body.high-contrast #topButton {
-
-    background: #ffffff !important;
-
-    color: #000000 !important;
-
-    border: 2px solid #000000 !important;
-}
-
-
-/* OLHO */
-
-body.high-contrast .eye-wrapper {
-
-    background: #ffffff !important;
-
-    border: 2px solid #000000;
-}
-
-
-body.high-contrast .eye-wrapper::before {
-
-    border-color: #000000 !important;
-}
-
-
-body.high-contrast .eyeFollower {
-
-    background: #000000 !important;
-}
-
-
-body.high-contrast .eyeFollower::after {
-
-    background: #ffffff !important;
-}
 /* =====================================================
    ESPAÇAMENTO
 ===================================================== */
@@ -1417,16 +1427,18 @@ body.extra-spacing {
    RESPONSIVO
 ===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
     .hero-content {
         grid-template-columns: 1fr;
     }
 
+
     .cards {
         grid-template-columns:
             repeat(2, 1fr);
     }
+
 
     .technology-grid {
         grid-template-columns:
@@ -1438,8 +1450,37 @@ body.extra-spacing {
 
 @media (max-width: 700px) {
 
+    .nav-container {
+        min-height: 68px;
+
+        gap: 12px;
+    }
+
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+
+    .logo-icon,
+    .logo-icon svg {
+        width: 34px;
+
+        height: 34px;
+    }
+
+
+    .eye-wrapper {
+        width: 48px;
+
+        height: 27px;
+
+        margin-left: auto;
+    }
+
+
     .menu-button {
-        display: block;
+        display: flex;
     }
 
 
@@ -1452,15 +1493,24 @@ body.extra-spacing {
 
         width: 100%;
 
-        background: var(--rosa);
+        padding:
+            8px
+            5%
+            14px;
+
+        background: white;
+
+        border-bottom:
+            1px solid var(--borda);
+
+        box-shadow:
+            0 8px 20px rgba(80, 20, 40, 0.08);
 
         display: none;
 
         flex-direction: column;
 
         align-items: stretch;
-
-        padding: 10px 5%;
     }
 
 
@@ -1472,7 +1522,22 @@ body.extra-spacing {
     nav a {
         width: 100%;
 
-        padding: 14px;
+        padding: 13px 15px;
+    }
+
+
+    nav a::after {
+        display: none;
+    }
+
+
+    body.dark nav {
+        background: #25181e;
+    }
+
+
+    body.high-contrast nav {
+        background: white !important;
     }
 
 
@@ -1480,23 +1545,6 @@ body.extra-spacing {
     .technology-grid,
     .resource-grid {
         grid-template-columns: 1fr;
-    }
-
-
-    .info-box {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-    }
-
-
-    .info-illustration {
-        margin: auto;
-    }
-
-
-    .accessibility-content {
-        justify-content: center;
     }
 
 
@@ -1509,105 +1557,25 @@ body.extra-spacing {
         padding: 60px 0;
     }
 
-}
-/* =====================================================
-   ACESSIBILIDADE — TAMANHO DOS TEXTOS
-===================================================== */
 
-body.font-18 {
-    font-size: 18px;
-}
+    .accessibility-content {
+        justify-content: center;
+    }
 
-body.font-20 {
-    font-size: 20px;
-}
-
-body.font-22 {
-    font-size: 22px;
-}
-
-body.font-24 {
-    font-size: 24px;
-}
-
-body.font-26 {
-    font-size: 26px;
-}
-
-body.font-28 {
-    font-size: 28px;
 }
 
 
-/* Mantém títulos proporcionais */
+@media (max-width: 430px) {
 
-body.font-18 h1,
-body.font-18 h2,
-body.font-18 h3,
-body.font-18 p,
-body.font-18 li,
-body.font-18 label,
-body.font-18 a,
-body.font-18 button {
-    font-size: 1em;
-}
+    .logo > span:last-child {
+        font-size: 1rem;
+    }
 
 
-body.font-20 h1,
-body.font-20 h2,
-body.font-20 h3,
-body.font-20 p,
-body.font-20 li,
-body.font-20 label,
-body.font-20 a,
-body.font-20 button {
-    font-size: 1em;
-}
+    .eye-wrapper {
+        width: 43px;
 
+        height: 25px;
+    }
 
-body.font-22 h1,
-body.font-22 h2,
-body.font-22 h3,
-body.font-22 p,
-body.font-22 li,
-body.font-22 label,
-body.font-22 a,
-body.font-22 button {
-    font-size: 1em;
-}
-
-
-body.font-24 h1,
-body.font-24 h2,
-body.font-24 h3,
-body.font-24 p,
-body.font-24 li,
-body.font-24 label,
-body.font-24 a,
-body.font-24 button {
-    font-size: 1em;
-}
-
-
-body.font-26 h1,
-body.font-26 h2,
-body.font-26 h3,
-body.font-26 p,
-body.font-26 li,
-body.font-26 label,
-body.font-26 a,
-body.font-26 button {
-    font-size: 1em;
-}
-
-
-body.font-28 h1,
-body.font-28 h2,
-body.font-28 h3,
-body.font-28 p,
-body.font-28 li,
-body.font-28 label,
-body.font-28 a,
-body.font-28 button {
-    font-size: 1em;
 }
