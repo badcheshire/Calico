@@ -2,438 +2,313 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="VisãoAcolhedora — informação, acessibilidade e inclusão para pessoas com baixa visão.">
+    <title>Guia | VisãoAcolhedora</title>
 
-    <title>VisãoAcolhedora | Início</title>
+    <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet"
-          href="style.css">
-
+    <script src="script.js" defer></script>
 </head>
-
 
 <body>
 
-
-    <!-- ACESSIBILIDADE -->
-
-    <div class="accessibility-bar">
-
-        <div class="accessibility-content">
-
-            <span>Acessibilidade:</span>
-
-            <button id="decreaseFont">
-                A−
-            </button>
-
-            <button id="increaseFont">
-                A+
-            </button>
-
-            <button id="contrastButton">
-                Contraste
-            </button>
-
-            <button id="darkMode">
-                Modo escuro
-            </button>
-
-            <button id="spacingButton">
-                Espaçamento
-            </button>
-
-        </div>
-
-    </div>
-
-
     <!-- CABEÇALHO -->
 
-    <header class="header">
+    <header>
 
-        <div class="container nav-container">
+        <div class="logo">
+            Visão<span>Acolhedora</span>
+        </div>
 
+        <button
+            class="menu-button"
+            aria-label="Abrir menu"
+            aria-expanded="false">
+            ☰
+        </button>
 
-            <a href="index.html"
-               class="logo">
+        <nav>
 
-                <span class="logo-icon">
-
-                    <svg viewBox="0 0 100 100">
-
-                        <circle
-                            cx="50"
-                            cy="50"
-                            r="38"
-                            fill="#d81b60"/>
-
-                        <circle
-                            cx="50"
-                            cy="50"
-                            r="15"
-                            fill="white"/>
-
-                    </svg>
-
-                </span>
-
-                <span>
-                    Visão<span>Acolhedora</span>
-                </span>
-
+            <a href="index.html">
+                Início
             </a>
 
+            <a href="guia.html" class="active">
+                Guia
+            </a>
 
-            <!-- OLHO -->
+            <a href="faq.html">
+                FAQ
+            </a>
 
-            <div class="eye-wrapper"
-                 aria-hidden="true">
+            <a href="contato.html">
+                Contato
+            </a>
 
-                <div id="eyeFollower"
-                     class="eyeFollower">
-                </div>
-
-            </div>
-
-
-            <button
-                class="menu-button"
-                type="button"
-                aria-expanded="false"
-                aria-label="Abrir menu">
-
-                ☰
-
-            </button>
-
-
-            <nav>
-
-                <a href="index.html">
-                    Início
-                </a>
-
-                <a href="sobre.html">
-                    Sobre
-                </a>
-
-                <a href="causas.html">
-                    Causas
-                </a>
-
-                <a href="tecnologia.html">
-                    Tecnologia
-                </a>
-
-                <a href="recursos.html">
-                    Recursos
-                </a>
-
-                <a href="faq.html">
-                    FAQ
-                </a>
-
-                <a href="contato.html">
-                    Contato
-                </a>
-
-            </nav>
-
-        </div>
+        </nav>
 
     </header>
 
 
-    <main>
+    <!-- FERRAMENTAS DE ACESSIBILIDADE -->
+
+    <div class="accessibility-bar">
+
+        <button id="increaseFont">
+            A+
+        </button>
+
+        <button id="decreaseFont">
+            A−
+        </button>
+
+        <button id="contrastButton">
+            Contraste
+        </button>
+
+        <button id="darkMode">
+            Modo escuro
+        </button>
+
+        <button id="spacingButton">
+            Espaçamento
+        </button>
+
+    </div>
 
 
-        <!-- HERO -->
+    <!-- CONTEÚDO DO GUIA -->
 
-        <section class="hero">
+    <main class="guide-page">
 
-            <div class="container hero-content">
+        <div class="guide-document">
 
-                <div>
+            <div class="guide-header">
 
-                    <span class="badge">
-                        Acessibilidade e inclusão
-                    </span>
+                <p class="guide-label">
+                    GUIA INFORMATIVO
+                </p>
 
+                <h1>
+                    Guia sobre Baixa Visão
+                </h1>
 
-                    <h1>
-                        Enxergar diferente
-                        <span>também é viver.</span>
-                    </h1>
-
-
-                    <p>
-                        O VisãoAcolhedora é um espaço dedicado
-                        à informação sobre baixa visão,
-                        acessibilidade, inclusão e tecnologias
-                        assistivas.
-                    </p>
-
-
-                    <p>
-                        Nosso objetivo é facilitar o acesso ao
-                        conhecimento e incentivar ambientes mais
-                        acessíveis para diferentes formas de
-                        enxergar.
-                    </p>
-
-
-                    <div class="hero-buttons">
-
-                        <a
-                            href="sobre.html"
-                            class="button primary">
-
-                            Conheça o projeto
-
-                        </a>
-
-
-                        <a
-                            href="recursos.html"
-                            class="button secondary">
-
-                            Recursos
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-card">
-
-                    <div class="hero-illustration">
-
-                        <svg viewBox="0 0 500 400">
-
-                            <circle
-                                cx="250"
-                                cy="200"
-                                r="145"
-                                fill="#fce4ec"/>
-
-                            <ellipse
-                                cx="250"
-                                cy="200"
-                                rx="125"
-                                ry="75"
-                                fill="white"/>
-
-                            <circle
-                                cx="250"
-                                cy="200"
-                                r="40"
-                                fill="#d81b60"/>
-
-                            <circle
-                                cx="264"
-                                cy="185"
-                                r="10"
-                                fill="white"/>
-
-                        </svg>
-
-                    </div>
-
-
-                    <h2>
-                        Informação também é acessibilidade.
-                    </h2>
-
-
-                    <p>
-                        Conhecimento ajuda a construir espaços
-                        mais inclusivos.
-                    </p>
-
-                </div>
+                <p>
+                    Informação, acessibilidade e inclusão
+                </p>
 
             </div>
 
-        </section>
 
-
-        <!-- INTRODUÇÃO -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span>
-                        ENTENDA
-                    </span>
-
-                    <h2>
-                        Por que falar sobre baixa visão?
-                    </h2>
-
-                    <p>
-                        A baixa visão pode influenciar tarefas
-                        do cotidiano e o acesso a informações.
-                        A acessibilidade pode ajudar a reduzir
-                        essas barreiras.
-                    </p>
-
-                </div>
-
-
-                <div class="cards">
-
-                    <article class="card">
-
-                        <h2>
-                            Informação
-                        </h2>
-
-                        <p>
-                            Informações claras e acessíveis ajudam
-                            pessoas, famílias, professores e
-                            profissionais a compreender melhor
-                            diferentes necessidades.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Inclusão
-                        </h2>
-
-                        <p>
-                            A inclusão busca garantir participação
-                            e acesso aos espaços educacionais,
-                            sociais e digitais.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Acessibilidade
-                        </h2>
-
-                        <p>
-                            Adaptações em ambientes, materiais,
-                            textos e tecnologias podem facilitar
-                            o acesso à informação.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Tecnologia
-                        </h2>
-
-                        <p>
-                            Ferramentas digitais podem auxiliar
-                            na leitura, ampliação, navegação e
-                            comunicação.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- GUIA -->
-
-        <section class="guide">
-
-            <div class="container guide-content">
-
-                <span class="guide-label">
-                    MATERIAL DE APOIO
-                </span>
+            <section class="guide-section">
 
                 <h2>
-                    Quer saber mais?
+                    O que é baixa visão?
                 </h2>
 
                 <p>
-                    Consulte o guia sobre baixa visão,
-                    acessibilidade e inclusão.
+                    Baixa visão é uma condição em que a pessoa apresenta
+                    uma redução significativa da capacidade visual que
+                    não é totalmente corrigida por óculos, lentes de
+                    contato, medicamentos ou outros tratamentos
+                    convencionais.
                 </p>
 
+                <p>
+                    A pessoa com baixa visão pode apresentar diferentes
+                    dificuldades para enxergar, dependendo da causa e
+                    das características de sua visão.
+                </p>
 
-                <a
-                    href="guia-baixa-visao.pdf"
-                    target="_blank"
-                    class="button white-button">
+            </section>
 
-                    Abrir guia
 
-                </a>
+            <section class="guide-section">
+
+                <h2>
+                    Principais dificuldades
+                </h2>
+
+                <p>
+                    Algumas pessoas podem apresentar dificuldade para
+                    identificar detalhes, ler textos pequenos, reconhecer
+                    rostos, perceber objetos à distância ou enxergar em
+                    ambientes com pouca iluminação.
+                </p>
+
+                <p>
+                    Essas dificuldades podem variar bastante de uma
+                    pessoa para outra. Por isso, é importante considerar
+                    as necessidades individuais.
+                </p>
+
+            </section>
+
+
+            <section class="guide-section">
+
+                <h2>
+                    Acessibilidade
+                </h2>
+
+                <p>
+                    A acessibilidade permite que espaços, informações,
+                    serviços e tecnologias possam ser utilizados pelo
+                    maior número possível de pessoas.
+                </p>
+
+                <p>
+                    Para pessoas com baixa visão, algumas medidas simples
+                    podem facilitar o acesso à informação.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Utilizar textos com tamanho adequado.
+                    </li>
+
+                    <li>
+                        Garantir contraste suficiente entre texto e fundo.
+                    </li>
+
+                    <li>
+                        Evitar informações transmitidas somente por cores.
+                    </li>
+
+                    <li>
+                        Utilizar uma organização visual clara.
+                    </li>
+
+                    <li>
+                        Permitir ampliação do conteúdo.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <section class="guide-section">
+
+                <h2>
+                    Tecnologias assistivas
+                </h2>
+
+                <p>
+                    Tecnologias assistivas são recursos que podem ajudar
+                    pessoas com deficiência ou dificuldades funcionais
+                    a realizar atividades com maior autonomia.
+                </p>
+
+                <p>
+                    Entre os recursos que podem auxiliar pessoas com
+                    baixa visão estão ampliadores de tela, leitores de
+                    tela, lupas eletrônicas, configurações de alto
+                    contraste e ferramentas de aumento de texto.
+                </p>
+
+            </section>
+
+
+            <section class="guide-section">
+
+                <h2>
+                    Como tornar um site mais acessível?
+                </h2>
+
+                <p>
+                    Um site acessível deve apresentar informações de
+                    maneira organizada, possuir boa legibilidade e
+                    oferecer alternativas que permitam ao usuário
+                    adaptar a experiência às suas necessidades.
+                </p>
+
+                <div class="guide-box">
+
+                    <h3>
+                        Dicas importantes
+                    </h3>
+
+                    <p>
+                        Use títulos bem organizados, textos legíveis,
+                        botões identificáveis e elementos que possam
+                        ser utilizados pelo teclado e por tecnologias
+                        assistivas.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <section class="guide-section">
+
+                <h2>
+                    Inclusão
+                </h2>
+
+                <p>
+                    A inclusão vai além da adaptação de espaços físicos.
+                    Ela também envolve garantir que todas as pessoas
+                    possam acessar informações, estudar, trabalhar,
+                    utilizar tecnologias e participar da sociedade.
+                </p>
+
+                <p>
+                    Pensar em acessibilidade desde o desenvolvimento
+                    de produtos, serviços e ambientes contribui para
+                    uma sociedade mais inclusiva.
+                </p>
+
+            </section>
+
+
+            <section class="guide-section">
+
+                <h2>
+                    Por que a informação é importante?
+                </h2>
+
+                <p>
+                    Conhecer as necessidades relacionadas à baixa visão
+                    ajuda a combater barreiras e facilita a criação de
+                    ambientes mais acessíveis.
+                </p>
+
+                <p>
+                    A informação também contribui para que as pessoas
+                    reconheçam seus direitos e conheçam recursos que
+                    podem facilitar sua autonomia.
+                </p>
+
+            </section>
+
+
+            <div class="guide-footer">
+
+                <p>
+                    VisãoAcolhedora — Informação e acessibilidade
+                </p>
 
             </div>
 
-        </section>
+        </div>
 
     </main>
 
 
-    <footer>
-
-        <div class="container footer-content">
-
-            <div>
-
-                <strong>
-                    VisãoAcolhedora
-                </strong>
-
-                <p>
-                    Informação, acessibilidade e inclusão.
-                </p>
-
-            </div>
-
-
-            <p>
-                © 2026 VisãoAcolhedora
-            </p>
-
-        </div>
-
-    </footer>
-
+    <!-- BOTÃO VOLTAR AO TOPO -->
 
     <button
         id="topButton"
         aria-label="Voltar ao topo">
-
         ↑
-
     </button>
-
-
-    <script src="script.js"></script>
 
 </body>
 
