@@ -1,546 +1,122 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Conheça o projeto VisãoAcolhedora, sua proposta e seus objetivos.">
-
-    <title>VisãoAcolhedora | Conheça o Projeto</title>
-
-    <link rel="stylesheet"
-          href="style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça o Projeto | VisãoAcolhedora</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<header class="header">
+    <div class="container nav-container">
 
-    <!-- ACESSIBILIDADE -->
+        <a href="index.html" class="logo">
+            <span class="logo-icon">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="38" fill="#d81b60"/>
+                    <circle cx="50" cy="50" r="15" fill="white"/>
+                </svg>
+            </span>
 
-    <div class="accessibility-bar">
+            <span>Visão<span>Acolhedora</span></span>
+        </a>
 
-        <div class="accessibility-content">
-
-            <span>Acessibilidade:</span>
-
-            <button id="decreaseFont">
-                A−
-            </button>
-
-            <button id="increaseFont">
-                A+
-            </button>
-
-            <button id="contrastButton">
-                Contraste
-            </button>
-
-            <button id="darkMode">
-                Modo escuro
-            </button>
-
-            <button id="spacingButton">
-                Espaçamento
-            </button>
-
-        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="conheca.html">Conheça o Projeto</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="causas.html">Causas</a>
+            <a href="tecnologia.html">Tecnologia</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contato.html">Contato</a>
+        </nav>
 
     </div>
+</header>
 
+<main>
 
-    <!-- CABEÇALHO -->
+<section class="section">
 
-    <header class="header">
+<div class="container">
 
-        <div class="container nav-container">
+<div class="section-title">
 
+<span>NOSSO PROJETO</span>
 
-            <a href="index.html"
-               class="logo">
+<h1>Conheça o VisãoAcolhedora</h1>
 
-                <span class="logo-icon">
+<p>
+O VisãoAcolhedora nasceu com o propósito de promover informação,
+acessibilidade e inclusão para pessoas com baixa visão.
+</p>
 
-                    <svg viewBox="0 0 100 100">
+</div>
 
-                        <circle
-                            cx="50"
-                            cy="50"
-                            r="38"
-                            fill="#d81b60"/>
+<div class="card">
 
-                        <circle
-                            cx="50"
-                            cy="50"
-                            r="15"
-                            fill="white"/>
+<h2>Nossa missão</h2>
 
-                    </svg>
+<p>
+Levar conhecimento sobre a baixa visão de forma simples, acessível e
+confiável, contribuindo para uma sociedade mais inclusiva e preparada
+para atender às necessidades de todas as pessoas.
+</p>
 
-                </span>
+<h2>Nosso objetivo</h2>
 
-                <span>
-                    Visão<span>Acolhedora</span>
-                </span>
+<p>
+Disponibilizar conteúdos educativos, recursos tecnológicos e informações
+sobre acessibilidade, incentivando a autonomia, a inclusão e o respeito
+às diferenças.
+</p>
 
-            </a>
+<h2>O que você encontrará aqui</h2>
 
+<ul>
+<li>Informações sobre baixa visão.</li>
+<li>Causas e formas de prevenção.</li>
+<li>Tecnologias assistivas.</li>
+<li>Recursos de acessibilidade.</li>
+<li>Dicas para inclusão social e educacional.</li>
+</ul>
 
-            <div class="eye-wrapper"
-                 aria-hidden="true">
+<h2>Nosso compromisso</h2>
 
-                <div id="eyeFollower"
-                     class="eyeFollower">
-                </div>
+<p>
+Acreditamos que a informação acessível transforma vidas. Nosso compromisso
+é oferecer conteúdos claros, atualizados e organizados para que qualquer
+pessoa possa compreender melhor a baixa visão e contribuir para uma
+sociedade mais inclusiva.
+</p>
 
-            </div>
+</div>
 
+</div>
 
-            <button
-                class="menu-button"
-                type="button"
-                aria-expanded="false"
-                aria-label="Abrir menu">
+</section>
 
-                ☰
+</main>
 
-            </button>
+<footer>
 
+<div class="container footer-content">
 
-            <nav>
+<div>
+<strong>VisãoAcolhedora</strong>
+<p>Informação, acessibilidade e inclusão.</p>
+</div>
 
-                <a href="index.html">
-                    Início
-                </a>
+<p>© 2026 VisãoAcolhedora</p>
 
-                <a href="sobre.html">
-                    Sobre
-                </a>
+</div>
 
-                <a href="causas.html">
-                    Causas
-                </a>
+</footer>
 
-                <a href="tecnologia.html">
-                    Tecnologia
-                </a>
-
-                <a href="recursos.html">
-                    Recursos
-                </a>
-
-                <a href="faq.html">
-                    FAQ
-                </a>
-
-                <a href="contato.html">
-                    Contato
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-    <!-- CONTEÚDO -->
-
-    <main>
-
-
-        <!-- HERO -->
-
-        <section class="page-hero">
-
-            <div class="container">
-
-                <span class="badge">
-                    Conheça o projeto
-                </span>
-
-                <h1>
-                    Bem-vindo ao
-                    <span>VisãoAcolhedora</span>
-                </h1>
-
-                <p>
-                    Um espaço criado para informar, conscientizar
-                    e incentivar a acessibilidade e a inclusão
-                    de pessoas com baixa visão.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- O PROJETO -->
-
-        <section class="section">
-
-            <div class="container">
-
-
-                <div class="section-title">
-
-                    <span>
-                        O PROJETO
-                    </span>
-
-                    <h2>
-                        O que é o VisãoAcolhedora?
-                    </h2>
-
-                    <p>
-                        O VisãoAcolhedora é um projeto voltado à
-                        divulgação de informações sobre baixa visão,
-                        acessibilidade, inclusão e tecnologias
-                        assistivas.
-                    </p>
-
-                </div>
-
-
-                <div class="cards">
-
-
-                    <article class="card">
-
-                        <h2>
-                            Nossa ideia
-                        </h2>
-
-                        <p>
-                            Criar um espaço simples e acolhedor
-                            onde qualquer pessoa possa encontrar
-                            informações sobre baixa visão e
-                            acessibilidade.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Nosso objetivo
-                        </h2>
-
-                        <p>
-                            Facilitar o acesso ao conhecimento e
-                            contribuir para a construção de ambientes
-                            mais acessíveis e inclusivos.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Para quem é?
-                        </h2>
-
-                        <p>
-                            O conteúdo pode ser útil para pessoas
-                            com baixa visão, familiares, estudantes,
-                            professores e qualquer pessoa interessada
-                            em acessibilidade.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- POR QUE EXISTE -->
-
-        <section class="section">
-
-
-            <div class="container">
-
-
-                <div class="section-title">
-
-                    <span>
-                        POR QUE CRIAMOS?
-                    </span>
-
-                    <h2>
-                        Informação também é acessibilidade.
-                    </h2>
-
-                    <p>
-                        A falta de informação pode dificultar a
-                        compreensão das necessidades de pessoas
-                        com baixa visão.
-                    </p>
-
-                    <p>
-                        Por isso, o VisãoAcolhedora reúne conteúdos
-                        educativos para ajudar a compreender melhor
-                        essas necessidades e incentivar atitudes
-                        mais inclusivas.
-                    </p>
-
-                </div>
-
-
-                <div class="cards">
-
-
-                    <article class="card">
-
-                        <h2>
-                            Informar
-                        </h2>
-
-                        <p>
-                            Compartilhar informações de maneira
-                            clara, organizada e acessível.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Conscientizar
-                        </h2>
-
-                        <p>
-                            Mostrar a importância da acessibilidade
-                            no cotidiano.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Incentivar
-                        </h2>
-
-                        <p>
-                            Incentivar mudanças que possam tornar
-                            ambientes mais inclusivos.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- COMO O SITE FUNCIONA -->
-
-        <section class="section">
-
-            <div class="container">
-
-
-                <div class="section-title">
-
-                    <span>
-                        EXPLORE
-                    </span>
-
-                    <h2>
-                        O que você encontrará no site?
-                    </h2>
-
-                </div>
-
-
-                <div class="cards">
-
-
-                    <article class="card">
-
-                        <h2>
-                            Causas
-                        </h2>
-
-                        <p>
-                            Informações sobre diferentes causas
-                            relacionadas à baixa visão.
-                        </p>
-
-                        <a href="causas.html"
-                           class="button secondary">
-
-                            Conhecer causas
-
-                        </a>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Tecnologia
-                        </h2>
-
-                        <p>
-                            Recursos e tecnologias assistivas que
-                            podem auxiliar no dia a dia.
-                        </p>
-
-                        <a href="tecnologia.html"
-                           class="button secondary">
-
-                            Conhecer tecnologias
-
-                        </a>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            Recursos
-                        </h2>
-
-                        <p>
-                            Materiais e ferramentas relacionados
-                            à acessibilidade.
-                        </p>
-
-                        <a href="recursos.html"
-                           class="button secondary">
-
-                            Ver recursos
-
-                        </a>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <h2>
-                            FAQ
-                        </h2>
-
-                        <p>
-                            Respostas para perguntas frequentes
-                            sobre os assuntos apresentados no site.
-                        </p>
-
-                        <a href="faq.html"
-                           class="button secondary">
-
-                            Acessar FAQ
-
-                        </a>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FINAL -->
-
-        <section class="guide">
-
-            <div class="container guide-content">
-
-                <span class="guide-label">
-                    VISÃOACOLHEDORA
-                </span>
-
-                <h2>
-                    Juntos por uma internet mais acessível.
-                </h2>
-
-                <p>
-                    Conhecimento, acessibilidade e inclusão
-                    podem ajudar a construir espaços melhores
-                    para todos.
-                </p>
-
-                <a href="index.html"
-                   class="button white-button">
-
-                    Voltar ao início
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- RODAPÉ -->
-
-    <footer>
-
-        <div class="container footer-content">
-
-            <div>
-
-                <strong>
-                    VisãoAcolhedora
-                </strong>
-
-                <p>
-                    Informação, acessibilidade e inclusão.
-                </p>
-
-            </div>
-
-
-            <p>
-                © 2026 VisãoAcolhedora
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <button
-        id="topButton"
-        aria-label="Voltar ao topo">
-
-        ↑
-
-    </button>
-
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
-
 </html>
-```
