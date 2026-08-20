@@ -3,11 +3,15 @@
     --rosa-escuro: #ad1457;
     --rosa-claro: #fce4ec;
     --rosa-medio: #f8bbd0;
+
     --fundo: #fff8fb;
     --branco: #ffffff;
+
     --texto: #3b2630;
     --texto-suave: #6e5962;
+
     --borda: #efd7e0;
+
     --tamanho-texto: 16px;
 }
 
@@ -28,9 +32,12 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+
     background: var(--fundo);
     color: var(--texto);
+
     font-size: var(--tamanho-texto);
+
     line-height: 1.7;
 
     transition:
@@ -72,25 +79,32 @@ svg {
 .accessibility-bar {
     background: #fff8fb;
     color: #553641;
+
     border-bottom: 1px solid #f4dce5;
+
     padding: 6px 0;
 }
 
 .accessibility-content {
     width: min(1150px, 92%);
+
     margin: auto;
 
     display: flex;
+
     justify-content: flex-end;
     align-items: center;
 
     gap: 6px;
+
     flex-wrap: wrap;
 }
 
 .accessibility-content span {
     font-size: 0.8rem;
+
     font-weight: 600;
+
     margin-right: 5px;
 }
 
@@ -98,13 +112,17 @@ svg {
     min-width: 36px;
 
     border: 1px solid #e6c6d2;
+
     background: white;
+
     color: #553641;
 
     border-radius: 6px;
+
     padding: 5px 9px;
 
     cursor: pointer;
+
     font-size: 0.8rem;
 
     transition:
@@ -115,7 +133,9 @@ svg {
 
 .accessibility-content button:hover {
     background: var(--rosa);
+
     color: white;
+
     border-color: var(--rosa);
 }
 
@@ -126,9 +146,11 @@ svg {
 
 .header {
     background: white;
+
     color: var(--texto);
 
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
@@ -143,6 +165,7 @@ svg {
     min-height: 76px;
 
     display: flex;
+
     align-items: center;
 
     gap: 25px;
@@ -155,6 +178,7 @@ svg {
 
 .logo {
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -162,6 +186,7 @@ svg {
     color: var(--rosa);
 
     font-size: 1.25rem;
+
     font-weight: 800;
 
     white-space: nowrap;
@@ -178,6 +203,7 @@ svg {
     height: 38px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -189,11 +215,13 @@ svg {
 
 
 /* =====================================================
-   OLHO
+   OLHO DO CABEÇALHO
+   OLHO PARADO
 ===================================================== */
 
 .eye-wrapper {
     width: 54px;
+
     height: 30px;
 
     background: white;
@@ -205,6 +233,7 @@ svg {
     position: relative;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -219,6 +248,7 @@ svg {
     position: absolute;
 
     width: 43px;
+
     height: 21px;
 
     border: 2px solid var(--rosa);
@@ -226,16 +256,9 @@ svg {
     border-radius: 50%;
 }
 
-
-/*
-   OLHO PARADO
-
-   Não existe animação aqui.
-   O olho não acompanha o mouse.
-*/
-
 .eyeFollower {
     width: 13px;
+
     height: 13px;
 
     background: var(--rosa);
@@ -259,6 +282,7 @@ svg {
     position: absolute;
 
     width: 4px;
+
     height: 4px;
 
     background: white;
@@ -266,6 +290,7 @@ svg {
     border-radius: 50%;
 
     top: 2px;
+
     left: 2px;
 }
 
@@ -276,7 +301,9 @@ svg {
 
 nav {
     display: flex;
+
     align-items: center;
+
     gap: 3px;
 }
 
@@ -290,6 +317,7 @@ nav a {
     color: #553641;
 
     font-size: 0.92rem;
+
     font-weight: 600;
 
     transition:
@@ -299,6 +327,7 @@ nav a {
 
 nav a:hover {
     color: var(--rosa);
+
     background: #fff1f6;
 }
 
@@ -309,6 +338,7 @@ nav a::after {
 
     left: 12px;
     right: 12px;
+
     bottom: 4px;
 
     height: 2px;
@@ -334,6 +364,7 @@ nav a:hover::after {
     display: none;
 
     width: 44px;
+
     height: 44px;
 
     border: 1px solid var(--borda);
@@ -341,6 +372,7 @@ nav a:hover::after {
     border-radius: 10px;
 
     background: #fff8fb;
+
     color: var(--rosa);
 
     font-size: 25px;
@@ -348,18 +380,20 @@ nav a:hover::after {
     cursor: pointer;
 
     align-items: center;
+
     justify-content: center;
 }
 
 
 /* =====================================================
-   HERO / PÁGINA INICIAL
+   HERO
 ===================================================== */
 
 .hero {
     min-height: calc(100vh - 125px);
 
     display: flex;
+
     align-items: center;
 
     padding: 70px 0;
@@ -388,6 +422,7 @@ nav a:hover::after {
     display: inline-block;
 
     background: white;
+
     color: var(--rosa);
 
     padding: 7px 14px;
@@ -395,6 +430,7 @@ nav a:hover::after {
     border-radius: 30px;
 
     font-size: 0.85rem;
+
     font-weight: bold;
 
     margin-bottom: 20px;
@@ -441,6 +477,7 @@ nav a:hover::after {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 13px 22px;
@@ -464,6 +501,7 @@ nav a:hover::after {
 
 .primary {
     background: var(--rosa);
+
     color: white;
 
     box-shadow:
@@ -480,12 +518,13 @@ nav a:hover::after {
 
 .white-button {
     background: white;
+
     color: var(--rosa);
 }
 
 
 /* =====================================================
-   HERO CARD / OLHO GRANDE
+   HERO CARD
 ===================================================== */
 
 .hero-card {
@@ -513,6 +552,7 @@ nav a:hover::after {
     color: var(--rosa);
 
     margin-top: 10px;
+
     margin-bottom: 8px;
 }
 
@@ -545,6 +585,7 @@ nav a:hover::after {
     color: var(--rosa);
 
     font-size: 0.85rem;
+
     font-weight: 800;
 
     letter-spacing: 1.5px;
@@ -675,6 +716,7 @@ nav a:hover::after {
 
 .content h3 {
     margin-top: 25px;
+
     margin-bottom: 8px;
 }
 
@@ -817,6 +859,7 @@ nav a:hover::after {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     text-align: left;
@@ -1011,16 +1054,18 @@ footer p {
 
 
 /* =====================================================
-   VOLTAR AO TOPO
+   BOTÃO VOLTAR AO TOPO
 ===================================================== */
 
 #topButton {
     position: fixed;
 
     right: 20px;
+
     bottom: 20px;
 
     width: 48px;
+
     height: 48px;
 
     border-radius: 50%;
@@ -1058,8 +1103,10 @@ footer p {
 body.dark {
     --fundo: #1b1116;
     --branco: #25181e;
+
     --texto: #f8eaf0;
     --texto-suave: #d5c2ca;
+
     --borda: #523440;
 }
 
@@ -1069,6 +1116,14 @@ body.dark .accessibility-bar {
     color: #f8eaf0;
 
     border-color: #523440;
+}
+
+body.dark .accessibility-content button {
+    background: #25181e;
+
+    color: #f8eaf0;
+
+    border-color: #60404c;
 }
 
 body.dark .header {
@@ -1098,8 +1153,8 @@ body.dark .page-hero {
     background: #211419;
 }
 
-body.dark .card,
 body.dark .hero-card,
+body.dark .card,
 body.dark .technology,
 body.dark .resource-grid article,
 body.dark .contact-form,
@@ -1136,127 +1191,237 @@ body.dark .contact-form textarea {
     border-color: #60404c;
 }
 
+body.dark .secondary {
+    background: #25181e;
+
+    color: #f8eaf0;
+
+    border-color: #60404c;
+}
+
+body.dark .badge {
+    background: #25181e;
+
+    border-color: #523440;
+}
+
 
 /* =====================================================
    ALTO CONTRASTE
 ===================================================== */
 
-body.high-contrast,
-body.high-contrast main,
-body.high-contrast section,
-body.high-contrast article,
-body.high-contrast .hero,
-body.high-contrast .page-hero,
-body.high-contrast .section,
-body.high-contrast .section.light,
-body.high-contrast .guide {
-    background: white !important;
+body.high-contrast {
+    background: #ffffff !important;
 
-    color: black !important;
+    color: #000000 !important;
 }
 
-body.high-contrast * {
-    box-shadow: none !important;
-}
 
-body.high-contrast p,
+/* Textos */
+
 body.high-contrast h1,
 body.high-contrast h2,
 body.high-contrast h3,
+body.high-contrast h4,
+body.high-contrast h5,
+body.high-contrast h6,
+body.high-contrast p,
 body.high-contrast span,
 body.high-contrast li,
-body.high-contrast label {
-    color: black important;
+body.high-contrast label,
+body.high-contrast strong {
+    color: #000000 !important;
 }
 
-body.high-contrast .header,
-body.high-contrast footer,
+
+/* Barra de acessibilidade */
+
 body.high-contrast .accessibility-bar {
-    background: white !important;
+    background: #ffffff !important;
 
-    color: black !important;
+    color: #000000 !important;
 
-    border-color: black !important;
+    border-color: #000000 !important;
 }
 
-body.high-contrast nav a,
+
+/* Botões da acessibilidade */
+
+body.high-contrast .accessibility-content button {
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+}
+
+body.high-contrast .accessibility-content button:hover {
+    background: #000000 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* Cabeçalho */
+
+body.high-contrast .header {
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border-color: #000000 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* Logo */
+
 body.high-contrast .logo {
-    color: black !important;
+    color: #000000 !important;
+}
+
+body.high-contrast .logo > span:last-child > span {
+    color: #000000 !important;
+}
+
+
+/* Menu */
+
+body.high-contrast nav a {
+    color: #000000 !important;
 }
 
 body.high-contrast nav a:hover {
-    background: black !important;
+    background: #000000 !important;
 
-    color: white !important;
+    color: #ffffff !important;
 }
 
-body.high-contrast .card,
-body.high-contrast .hero-card,
-body.high-contrast .technology,
-body.high-contrast .resource-grid article,
-body.high-contrast .contact-form,
-body.high-contrast .info-box,
-body.high-contrast .faq-question,
-body.high-contrast .faq-answer {
-    background: white !important;
 
-    color: black !important;
+/* Menu mobile */
 
-    border: 2px solid black !important;
+body.high-contrast .menu-button {
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
 }
+
+
+/* Hero */
+
+body.high-contrast .hero {
+    background: #ffffff !important;
+
+    color: #000000 !important;
+}
+
+
+/* Badge */
+
+body.high-contrast .badge {
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+}
+
+
+/* Botões */
 
 body.high-contrast .button,
 body.high-contrast .primary,
 body.high-contrast .secondary,
 body.high-contrast .white-button {
-    background: white !important;
+    background: #ffffff !important;
 
-    color: black !important;
+    color: #000000 !important;
 
-    border: 2px solid black !important;
+    border: 2px solid #000000 !important;
+
+    box-shadow: none !important;
 }
 
 body.high-contrast .button:hover {
-    background: black !important;
+    background: #000000 !important;
 
-    color: white !important;
+    color: #ffffff !important;
 }
 
-body.high-contrast .accessibility-content button {
-    background: white !important;
 
-    color: black !important;
+/* Card */
 
-    border: 2px solid black !important;
+body.high-contrast .hero-card,
+body.high-contrast .card,
+body.high-contrast .technology,
+body.high-contrast .resource-grid article,
+body.high-contrast .info-box,
+body.high-contrast .contact-form,
+body.high-contrast .faq-question,
+body.high-contrast .faq-answer {
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000 !important;
+
+    box-shadow: none !important;
 }
 
-body.high-contrast .accessibility-content button:hover {
-    background: black !important;
 
-    color: white !important;
+/* Links */
+
+body.high-contrast a {
+    color: #000000 !important;
 }
+
+
+/* Olho */
 
 body.high-contrast .eye-wrapper {
-    background: white !important;
+    background: #ffffff !important;
 
-    border: 2px solid black !important;
+    border: 2px solid #000000 !important;
 }
 
 body.high-contrast .eye-wrapper::before {
-    border-color: black !important;
+    border-color: #000000 !important;
 }
 
 body.high-contrast .eyeFollower {
-    background: black !important;
+    background: #000000 !important;
 }
 
 body.high-contrast .eyeFollower::after {
-    background: white !important;
+    background: #ffffff !important;
+}
+
+
+/* Rodapé */
+
+body.high-contrast footer {
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border-top: 2px solid #000000 !important;
 }
 
 body.high-contrast footer strong,
 body.high-contrast footer p {
-    color: black !important;
+    color: #000000 !important;
+}
+
+
+/* Botão voltar ao topo */
+
+body.high-contrast #topButton {
+    background: #000000 !important;
+
+    color: #ffffff !important;
 }
 
 
@@ -1265,22 +1430,38 @@ body.high-contrast footer p {
 ===================================================== */
 
 body.extra-spacing {
-    line-height: 2;
+    line-height: 2 !important;
 
-    letter-spacing: 0.05em;
+    letter-spacing: 0.05em !important;
 
-    word-spacing: 0.12em;
+    word-spacing: 0.12em !important;
+}
+
+body.extra-spacing p,
+body.extra-spacing li,
+body.extra-spacing a,
+body.extra-spacing button,
+body.extra-spacing label {
+    line-height: 2 !important;
 }
 
 
 /* =====================================================
-   RESPONSIVO
+   RESPONSIVO - TABLET
 ===================================================== */
 
 @media (max-width: 950px) {
 
     .hero-content {
         grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
     }
 
     .cards {
@@ -1294,6 +1475,10 @@ body.extra-spacing {
     }
 }
 
+
+/* =====================================================
+   RESPONSIVO - CELULAR
+===================================================== */
 
 @media (max-width: 700px) {
 
@@ -1310,11 +1495,13 @@ body.extra-spacing {
     .logo-icon,
     .logo-icon svg {
         width: 34px;
+
         height: 34px;
     }
 
     .eye-wrapper {
         width: 48px;
+
         height: 27px;
 
         margin-left: auto;
@@ -1328,6 +1515,7 @@ body.extra-spacing {
         position: absolute;
 
         top: 100%;
+
         left: 0;
 
         width: 100%;
@@ -1371,7 +1559,7 @@ body.extra-spacing {
     }
 
     body.high-contrast nav {
-        background: white !important;
+        background: #ffffff !important;
     }
 
     .cards,
@@ -1381,6 +1569,8 @@ body.extra-spacing {
     }
 
     .hero {
+        min-height: auto;
+
         padding: 60px 0;
     }
 
@@ -1399,8 +1589,20 @@ body.extra-spacing {
     .hero-card {
         padding: 20px;
     }
+
+    .hero h1 {
+        font-size: clamp(
+            2.2rem,
+            10vw,
+            3.5rem
+        );
+    }
 }
 
+
+/* =====================================================
+   RESPONSIVO - CELULAR PEQUENO
+===================================================== */
 
 @media (max-width: 430px) {
 
@@ -1410,6 +1612,7 @@ body.extra-spacing {
 
     .eye-wrapper {
         width: 43px;
+
         height: 25px;
     }
 
@@ -1419,5 +1622,19 @@ body.extra-spacing {
 
     .accessibility-content button {
         padding: 5px 7px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
     }
 }

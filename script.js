@@ -1,552 +1,248 @@
+/* =====================================================
+   VISÃO ACOLHEDORA
+   SCRIPT PRINCIPAL
+===================================================== */
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    /* =================================================
+       ELEMENTOS
+    ================================================= */
 
     const body = document.body;
 
+    const decreaseFont = document.getElementById("decreaseFont");
+    const increaseFont = document.getElementById("increaseFont");
+    const contrastButton = document.getElementById("contrastButton");
+    const darkMode = document.getElementById("darkMode");
+    const spacingButton = document.getElementById("spacingButton");
 
-    /* =====================================================
-       ACESSIBILIDADE SALVA
-    ===================================================== */
+    const menuButton = document.querySelector(".menu-button");
+    const nav = document.querySelector("nav");
 
-    let tamanhoFonte =
-        parseInt(
-            localStorage.getItem("tamanhoFonte")
-        ) || 16;
+    const topButton = document.getElementById("topButton");
+
+    const eyeFollower = document.getElementById("eyeFollower");
 
 
-    if (localStorage.getItem("modoEscuro") === "true") {
-        body.classList.add("dark");
+    /* =================================================
+       TAMANHO DA FONTE
+    ================================================= */
+
+    let fontSize = 16;
+
+    if (decreaseFont) {
+
+        decreaseFont.addEventListener("click", function () {
+
+            if (fontSize > 12) {
+
+                fontSize -= 1;
+
+                body.style.fontSize = fontSize + "px";
+
+            }
+
+        });
+
     }
 
 
-    if (localStorage.getItem("altoContraste") === "true") {
-        body.classList.add("high-contrast");
+    if (increaseFont) {
+
+        increaseFont.addEventListener("click", function () {
+
+            if (fontSize < 24) {
+
+                fontSize += 1;
+
+                body.style.fontSize = fontSize + "px";
+
+            }
+
+        });
+
     }
 
 
-    if (localStorage.getItem("espacamento") === "true") {
-        body.classList.add("extra-spacing");
+    /* =================================================
+       ALTO CONTRASTE
+    ================================================= */
+
+    if (contrastButton) {
+
+        contrastButton.addEventListener("click", function () {
+
+            body.classList.toggle("high-contrast");
+
+        });
+
     }
 
 
-    function aplicarTamanhoFonte() {
+    /* =================================================
+       MODO ESCURO
+    ================================================= */
 
-        body.style.setProperty(
-            "--tamanho-texto",
-            tamanhoFonte + "px"
-        );
+    if (darkMode) {
 
-        localStorage.setItem(
-            "tamanhoFonte",
-            tamanhoFonte
-        );
+        darkMode.addEventListener("click", function () {
+
+            body.classList.toggle("dark");
+
+        });
+
     }
 
 
-    aplicarTamanhoFonte();
+    /* =================================================
+       ESPAÇAMENTO
+    ================================================= */
+
+    if (spacingButton) {
+
+        spacingButton.addEventListener("click", function () {
+
+            body.classList.toggle("extra-spacing");
+
+        });
+
+    }
 
 
-    /* =====================================================
-       MENU
-    ===================================================== */
-
-    const menuButton =
-        document.querySelector(".menu-button");
-
-    const nav =
-        document.querySelector("nav");
-
+    /* =================================================
+       MENU MOBILE
+    ================================================= */
 
     if (menuButton && nav) {
 
-        menuButton.addEventListener(
-            "click",
-            function () {
+        menuButton.addEventListener("click", function () {
 
-                nav.classList.toggle("active");
+            const aberto = nav.classList.toggle("active");
 
-                const aberto =
-                    nav.classList.contains("active");
+            menuButton.setAttribute(
+                "aria-expanded",
+                aberto ? "true" : "false"
+            );
 
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    aberto ? "true" : "false"
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       FECHAR MENU
-    ===================================================== */
-
-    document.querySelectorAll("nav a")
-        .forEach(function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    if (nav) {
-                        nav.classList.remove("active");
-                    }
-
-                    if (menuButton) {
-
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                    }
-
-                }
+            menuButton.setAttribute(
+                "aria-label",
+                aberto ? "Fechar menu" : "Abrir menu"
             );
 
         });
 
 
-    /* =====================================================
-       AUMENTAR FONTE
-    ===================================================== */
+        /* Fecha o menu quando clicar em um link */
 
-    const increaseFont =
-        document.getElementById("increaseFont");
+        const links = nav.querySelectorAll("a");
 
+        links.forEach(function (link) {
 
-    if (increaseFont) {
+            link.addEventListener("click", function () {
 
-        increaseFont.addEventListener(
-            "click",
-            function () {
+                nav.classList.remove("active");
 
-                if (tamanhoFonte < 28) {
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-                    tamanhoFonte += 2;
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Abrir menu"
+                );
 
-                    aplicarTamanhoFonte();
+            });
 
-                }
-
-            }
-        );
+        });
 
     }
 
 
-    /* =====================================================
-       DIMINUIR FONTE
-    ===================================================== */
-
-    const decreaseFont =
-        document.getElementById("decreaseFont");
-
-
-    if (decreaseFont) {
-
-        decreaseFont.addEventListener(
-            "click",
-            function () {
-
-                if (tamanhoFonte > 12) {
-
-                    tamanhoFonte -= 2;
-
-                    aplicarTamanhoFonte();
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       MODO ESCURO
-    ===================================================== */
-
-    const darkMode =
-        document.getElementById("darkMode");
-
-
-    if (darkMode) {
-
-        darkMode.addEventListener(
-            "click",
-            function () {
-
-                body.classList.toggle("dark");
-
-                localStorage.setItem(
-                    "modoEscuro",
-                    body.classList.contains("dark")
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       CONTRASTE
-    ===================================================== */
-
-    const contrastButton =
-        document.getElementById("contrastButton");
-
-
-    if (contrastButton) {
-
-        contrastButton.addEventListener(
-            "click",
-            function () {
-
-                body.classList.toggle(
-                    "high-contrast"
-                );
-
-                localStorage.setItem(
-                    "altoContraste",
-                    body.classList.contains(
-                        "high-contrast"
-                    )
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       ESPAÇAMENTO
-    ===================================================== */
-
-    const spacingButton =
-        document.getElementById("spacingButton");
-
-
-    if (spacingButton) {
-
-        spacingButton.addEventListener(
-            "click",
-            function () {
-
-                body.classList.toggle(
-                    "extra-spacing"
-                );
-
-                localStorage.setItem(
-                    "espacamento",
-                    body.classList.contains(
-                        "extra-spacing"
-                    )
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       FAQ
-    ===================================================== */
-
-    const questions =
-        document.querySelectorAll(
-            ".faq-question"
-        );
-
-
-    questions.forEach(function (question) {
-
-        question.addEventListener(
-            "click",
-            function () {
-
-                const answer =
-                    question.nextElementSibling;
-
-
-                if (!answer) {
-                    return;
-                }
-
-
-                const aberto =
-                    answer.classList.contains(
-                        "active"
-                    );
-
-
-                answer.classList.toggle(
-                    "active"
-                );
-
-
-                const symbol =
-                    question.querySelector(
-                        ".faq-symbol"
-                    );
-
-
-                if (symbol) {
-
-                    symbol.textContent =
-                        aberto ? "+" : "−";
-
-                }
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       VOLTAR AO TOPO
-    ===================================================== */
-
-    const topButton =
-        document.getElementById(
-            "topButton"
-        );
-
+    /* =================================================
+       BOTÃO VOLTAR AO TOPO
+    ================================================= */
 
     if (topButton) {
 
-        window.addEventListener(
-            "scroll",
-            function () {
+        window.addEventListener("scroll", function () {
 
-                if (window.scrollY > 400) {
+            if (window.scrollY > 300) {
 
-                    topButton.classList.add(
-                        "show"
-                    );
+                topButton.classList.add("show");
 
-                } else {
+            } else {
 
-                    topButton.classList.remove(
-                        "show"
-                    );
-
-                }
+                topButton.classList.remove("show");
 
             }
-        );
+
+        });
 
 
-        topButton.addEventListener(
-            "click",
-            function () {
+        topButton.addEventListener("click", function () {
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-            }
-        );
+        });
 
     }
 
 
-    /* =====================================================
-       FORMULÁRIO
-    ===================================================== */
+    /* =================================================
+       OLHO PARADO
+       
+       IMPORTANTE:
+       Não existe código seguindo o mouse.
+    ================================================= */
 
-    const form =
-        document.querySelector(
-            ".contact-form"
-        );
+    if (eyeFollower) {
 
-
-    if (form) {
-
-        form.addEventListener(
-            "submit",
-            function (event) {
-
-                const name =
-                    document.getElementById(
-                        "name"
-                    );
-
-                const email =
-                    document.getElementById(
-                        "email"
-                    );
-
-                const message =
-                    document.getElementById(
-                        "message"
-                    );
-
-
-                if (
-                    !name ||
-                    !name.value.trim()
-                ) {
-
-                    event.preventDefault();
-
-                    alert(
-                        "Digite seu nome."
-                    );
-
-                    if (name) {
-                        name.focus();
-                    }
-
-                    return;
-
-                }
-
-
-                if (
-                    !email ||
-                    !email.value.trim()
-                ) {
-
-                    event.preventDefault();
-
-                    alert(
-                        "Digite seu e-mail."
-                    );
-
-                    if (email) {
-                        email.focus();
-                    }
-
-                    return;
-
-                }
-
-
-                if (
-                    !message ||
-                    !message.value.trim()
-                ) {
-
-                    event.preventDefault();
-
-                    alert(
-                        "Digite uma mensagem."
-                    );
-
-                    if (message) {
-                        message.focus();
-                    }
-
-                    return;
-
-                }
-
-            }
-        );
+        eyeFollower.style.transform = "none";
 
     }
 
 
-    /* =====================================================
-       OLHO
-    ===================================================== */
+    /* =================================================
+       FAQ
+    ================================================= */
 
-    const pupil =
-        document.getElementById(
-            "eyeFollower"
-        );
+    const faqQuestions =
+        document.querySelectorAll(".faq-question");
 
 
-    if (pupil) {
+    faqQuestions.forEach(function (question) {
 
-        const eye =
-            pupil.parentElement;
+        question.addEventListener("click", function () {
 
+            const answer =
+                question.nextElementSibling;
 
-        document.addEventListener(
-            "mousemove",
-            function (event) {
+            if (!answer) {
+                return;
+            }
 
-                if (!eye) {
-                    return;
-                }
-
-
-                const rect =
-                    eye.getBoundingClientRect();
+            const aberto =
+                answer.classList.toggle("active");
 
 
-                const centerX =
-                    rect.left +
-                    rect.width / 2;
+            const symbol =
+                question.querySelector(".faq-symbol");
 
 
-                const centerY =
-                    rect.top +
-                    rect.height / 2;
+            if (symbol) {
 
-
-                const deltaX =
-                    event.clientX -
-                    centerX;
-
-
-                const deltaY =
-                    event.clientY -
-                    centerY;
-
-
-                const angle =
-                    Math.atan2(
-                        deltaY,
-                        deltaX
-                    );
-
-
-                const distance =
-                    Math.min(
-                        7,
-                        Math.hypot(
-                            deltaX,
-                            deltaY
-                        ) / 30
-                    );
-
-
-                const x =
-                    Math.cos(angle) *
-                    distance;
-
-
-                const y =
-                    Math.sin(angle) *
-                    distance;
-
-
-                pupil.style.transform =
-                    `translate(${x}px, ${y}px)`;
+                symbol.textContent =
+                    aberto ? "−" : "+";
 
             }
-        );
 
+        });
 
-        document.addEventListener(
-            "mouseleave",
-            function () {
-
-                pupil.style.transform =
-                    "translate(0, 0)";
-
-            }
-        );
-
-    }
+    });
 
 });
