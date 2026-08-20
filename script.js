@@ -1,247 +1,307 @@
 /* =====================================================
-   VISÃO ACOLHEDORA
-   SCRIPT PRINCIPAL
+   ACESSIBILIDADE
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
+const decreaseFont = document.getElementById("decreaseFont");
+const increaseFont = document.getElementById("increaseFont");
+const contrastButton = document.getElementById("contrastButton");
+const darkMode = document.getElementById("darkMode");
+const spacingButton = document.getElementById("spacingButton");
+
+let fontSize = 16;
+
+
+/* =====================================================
+   AUMENTAR FONTE
+===================================================== */
+
+if (increaseFont) {
+    increaseFont.addEventListener("click", function () {
+
+        if (fontSize < 24) {
+            fontSize += 2;
+
+            document.documentElement.style.setProperty(
+                "--tamanho-texto",
+                fontSize + "px"
+            );
+        }
+
+    });
+}
+
+
+/* =====================================================
+   DIMINUIR FONTE
+===================================================== */
+
+if (decreaseFont) {
+    decreaseFont.addEventListener("click", function () {
+
+        if (fontSize > 12) {
+            fontSize -= 2;
+
+            document.documentElement.style.setProperty(
+                "--tamanho-texto",
+                fontSize + "px"
+            );
+        }
+
+    });
+}
+
+
+/* =====================================================
+   ALTO CONTRASTE
+===================================================== */
+
+if (contrastButton) {
+
+    contrastButton.addEventListener("click", function () {
+
+        document.body.classList.toggle("high-contrast");
+
+    });
+
+}
+
+
+/* =====================================================
+   MODO ESCURO
+===================================================== */
+
+if (darkMode) {
+
+    darkMode.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark");
+
+    });
+
+}
+
+
+/* =====================================================
+   ESPAÇAMENTO
+===================================================== */
+
+if (spacingButton) {
+
+    spacingButton.addEventListener("click", function () {
+
+        document.body.classList.toggle("extra-spacing");
+
+    });
+
+}
+
+
+/* =====================================================
+   OLHO QUE ACOMPANHA O MOUSE
+===================================================== */
+
+const eye = document.getElementById("eyeFollower");
+const eyeWrapper = document.querySelector(".eye-wrapper");
+
+if (eye && eyeWrapper) {
+
+    document.addEventListener("mousemove", function (event) {
+
+        const rect = eyeWrapper.getBoundingClientRect();
+
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        let dx = event.clientX - centerX;
+        let dy = event.clientY - centerY;
+
+        const distance = Math.sqrt(
+            dx * dx + dy * dy
+        );
+
+        /*
+         * Limite máximo de movimento
+         * para a pupila não sair do olho.
+         */
+
+        const maxDistance = 11;
+
+        if (distance > maxDistance) {
+
+            dx = (dx / distance) * maxDistance;
+            dy = (dy / distance) * maxDistance;
+
+        }
+
+        eye.style.transform =
+            `translate(
+                calc(-50% + ${dx}px),
+                calc(-50% + ${dy}px)
+            )`;
+
+    });
+
 
     /* =================================================
-       ELEMENTOS
+       QUANDO O MOUSE SAI DA PÁGINA
     ================================================= */
 
-    const body = document.body;
+    document.addEventListener("mouseleave", function () {
 
-    const decreaseFont = document.getElementById("decreaseFont");
-    const increaseFont = document.getElementById("increaseFont");
-    const contrastButton = document.getElementById("contrastButton");
-    const darkMode = document.getElementById("darkMode");
-    const spacingButton = document.getElementById("spacingButton");
+        eye.style.transform =
+            "translate(-50%, -50%)";
 
-    const menuButton = document.querySelector(".menu-button");
-    const nav = document.querySelector("nav");
-
-    const topButton = document.getElementById("topButton");
-
-    const eyeFollower = document.getElementById("eyeFollower");
+    });
 
 
     /* =================================================
-       TAMANHO DA FONTE
+       QUANDO O MOUSE VOLTA PARA A PÁGINA
     ================================================= */
 
-    let fontSize = 16;
+    document.addEventListener("mouseenter", function (event) {
 
-    if (decreaseFont) {
+        const rect = eyeWrapper.getBoundingClientRect();
 
-        decreaseFont.addEventListener("click", function () {
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
 
-            if (fontSize > 12) {
+        let dx = event.clientX - centerX;
+        let dy = event.clientY - centerY;
 
-                fontSize -= 1;
+        const distance = Math.sqrt(
+            dx * dx + dy * dy
+        );
 
-                body.style.fontSize = fontSize + "px";
+        const maxDistance = 11;
 
-            }
+        if (distance > maxDistance) {
 
-        });
+            dx = (dx / distance) * maxDistance;
+            dy = (dy / distance) * maxDistance;
 
-    }
+        }
 
+        eye.style.transform =
+            `translate(
+                calc(-50% + ${dx}px),
+                calc(-50% + ${dy}px)
+            )`;
 
-    if (increaseFont) {
+    });
 
-        increaseFont.addEventListener("click", function () {
-
-            if (fontSize < 24) {
-
-                fontSize += 1;
-
-                body.style.fontSize = fontSize + "px";
-
-            }
-
-        });
-
-    }
+}
 
 
-    /* =================================================
-       ALTO CONTRASTE
-    ================================================= */
+/* =====================================================
+   MENU MOBILE
+===================================================== */
 
-    if (contrastButton) {
+const menuButton = document.querySelector(".menu-button");
+const nav = document.querySelector("nav");
 
-        contrastButton.addEventListener("click", function () {
+if (menuButton && nav) {
 
-            body.classList.toggle("high-contrast");
+    menuButton.addEventListener("click", function () {
 
-        });
+        const isOpen = nav.classList.toggle("active");
 
-    }
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
-
-    /* =================================================
-       MODO ESCURO
-    ================================================= */
-
-    if (darkMode) {
-
-        darkMode.addEventListener("click", function () {
-
-            body.classList.toggle("dark");
-
-        });
-
-    }
+    });
 
 
-    /* =================================================
-       ESPAÇAMENTO
-    ================================================= */
+    /* Fecha o menu quando clicar em um link */
 
-    if (spacingButton) {
+    const navLinks = nav.querySelectorAll("a");
 
-        spacingButton.addEventListener("click", function () {
+    navLinks.forEach(function (link) {
 
-            body.classList.toggle("extra-spacing");
+        link.addEventListener("click", function () {
 
-        });
-
-    }
-
-
-    /* =================================================
-       MENU MOBILE
-    ================================================= */
-
-    if (menuButton && nav) {
-
-        menuButton.addEventListener("click", function () {
-
-            const aberto = nav.classList.toggle("active");
+            nav.classList.remove("active");
 
             menuButton.setAttribute(
                 "aria-expanded",
-                aberto ? "true" : "false"
-            );
-
-            menuButton.setAttribute(
-                "aria-label",
-                aberto ? "Fechar menu" : "Abrir menu"
+                "false"
             );
 
         });
 
+    });
 
-        /* Fecha o menu quando clicar em um link */
+}
 
-        const links = nav.querySelectorAll("a");
 
-        links.forEach(function (link) {
+/* =====================================================
+   BOTÃO VOLTAR AO TOPO
+===================================================== */
 
-            link.addEventListener("click", function () {
+const topButton = document.getElementById("topButton");
 
-                nav.classList.remove("active");
+if (topButton) {
 
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+    window.addEventListener("scroll", function () {
 
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Abrir menu"
-                );
+        if (window.scrollY > 300) {
 
-            });
+            topButton.classList.add("show");
 
+        } else {
+
+            topButton.classList.remove("show");
+
+        }
+
+    });
+
+
+    topButton.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
         });
 
-    }
+    });
+
+}
 
 
-    /* =================================================
-       BOTÃO VOLTAR AO TOPO
-    ================================================= */
+/* =====================================================
+   FAQ
+===================================================== */
 
-    if (topButton) {
+const faqQuestions =
+    document.querySelectorAll(".faq-question");
 
-        window.addEventListener("scroll", function () {
+faqQuestions.forEach(function (question) {
 
-            if (window.scrollY > 300) {
+    question.addEventListener("click", function () {
 
-                topButton.classList.add("show");
+        const answer =
+            question.nextElementSibling;
 
+        if (!answer) {
+            return;
+        }
+
+        answer.classList.toggle("active");
+
+        const symbol =
+            question.querySelector(".faq-symbol");
+
+        if (symbol) {
+
+            if (answer.classList.contains("active")) {
+                symbol.textContent = "−";
             } else {
-
-                topButton.classList.remove("show");
-
+                symbol.textContent = "+";
             }
 
-        });
-
-
-        topButton.addEventListener("click", function () {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        });
-
-    }
-
-
-    /* =================================================
-       OLHO PARADO
-       
-       IMPORTANTE:
-       Não existe código seguindo o mouse.
-    ================================================= */
-
-    if (eyeFollower) {
-
-        eyeFollower.style.transform = "none";
-
-    }
-
-
-    /* =================================================
-       FAQ
-    ================================================= */
-
-    const faqQuestions =
-        document.querySelectorAll(".faq-question");
-
-
-    faqQuestions.forEach(function (question) {
-
-        question.addEventListener("click", function () {
-
-            const answer =
-                question.nextElementSibling;
-
-            if (!answer) {
-                return;
-            }
-
-            const aberto =
-                answer.classList.toggle("active");
-
-
-            const symbol =
-                question.querySelector(".faq-symbol");
-
-
-            if (symbol) {
-
-                symbol.textContent =
-                    aberto ? "−" : "+";
-
-            }
-
-        });
+        }
 
     });
 
