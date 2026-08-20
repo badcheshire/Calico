@@ -2,29 +2,27 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="VisãoAcolhedora — informação, acessibilidade e inclusão para pessoas com baixa visão.">
+    <meta
+        name="description"
+        content="VisãoAcolhedora — informação, acessibilidade e inclusão para pessoas com baixa visão."
+    >
 
     <title>VisãoAcolhedora | Início</title>
 
-    <link rel="stylesheet"
-          href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
 
-    <!-- ============================= -->
-    <!-- ACESSIBILIDADE                -->
-    <!-- ============================= -->
+    <!-- ==================================================
+         BARRA DE ACESSIBILIDADE
+    =================================================== -->
 
     <div class="accessibility-bar">
 
@@ -57,9 +55,10 @@
     </div>
 
 
-    <!-- ============================= -->
-    <!-- CABEÇALHO                     -->
-    <!-- ============================= -->
+
+    <!-- ==================================================
+         CABEÇALHO
+    =================================================== -->
 
     <header class="header">
 
@@ -68,28 +67,33 @@
 
             <!-- LOGO -->
 
-            <a href="index.html"
-               class="logo">
+            <a href="index.html" class="logo">
 
                 <span class="logo-icon">
 
-                    <svg viewBox="0 0 100 100">
+                    <svg
+                        viewBox="0 0 100 100"
+                        aria-hidden="true"
+                    >
 
                         <circle
                             cx="50"
                             cy="50"
                             r="38"
-                            fill="#d81b60"/>
+                            fill="#d81b60"
+                        />
 
                         <circle
                             cx="50"
                             cy="50"
                             r="15"
-                            fill="white"/>
+                            fill="white"
+                        />
 
                     </svg>
 
                 </span>
+
 
                 <span>
                     Visão<span>Acolhedora</span>
@@ -98,81 +102,105 @@
             </a>
 
 
-            <!-- OLHO PARADO -->
 
-            <div class="eye-wrapper"
-                 aria-hidden="true">
+            <!-- ==================================================
+                 OLHO
+                 O olho fica parado.
+            =================================================== -->
 
-                <div class="eyeFollower"
-                     id="eyeFollower">
+            <div
+                class="eye-wrapper"
+                aria-hidden="true"
+            >
 
-                </div>
+                <div
+                    id="eyeFollower"
+                    class="eyeFollower"
+                ></div>
 
             </div>
 
 
-            <!-- MENU MOBILE -->
+
+            <!-- ==================================================
+                 BOTÃO DO MENU MOBILE
+            =================================================== -->
 
             <button
                 class="menu-button"
                 type="button"
                 aria-expanded="false"
-                aria-label="Abrir menu">
-
+                aria-label="Abrir menu"
+            >
                 ☰
-
             </button>
 
 
-            <!-- MENU -->
 
-           <nav>
+            <!-- ==================================================
+                 MENU
+                 
+                 ATENÇÃO:
+                 "Conheça o projeto" NÃO ESTÁ AQUI.
+            =================================================== -->
 
-    <a href="index.html">
-        Início
-    </a>
+            <nav>
 
-    <a href="sobre.html">
-        Sobre
-    </a>
+                <a href="index.html">
+                    Início
+                </a>
 
-    <a href="causas.html">
-        Causas
-    </a>
+                <a href="sobre.html">
+                    Sobre
+                </a>
 
-    <a href="tecnologia.html">
-        Tecnologia
-    </a>
+                <a href="causas.html">
+                    Causas
+                </a>
 
-    <a href="recursos.html">
-        Recursos
-    </a>
+                <a href="tecnologia.html">
+                    Tecnologia
+                </a>
 
-    <a href="faq.html">
-        FAQ
-    </a>
+                <a href="recursos.html">
+                    Recursos
+                </a>
 
-    <a href="contato.html">
-        Contato
-    </a>
+                <a href="faq.html">
+                    FAQ
+                </a>
 
-</nav>
+                <a href="contato.html">
+                    Contato
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
 
 
-    <!-- ============================= -->
-    <!-- PÁGINA INICIAL                -->
-    <!-- ============================= -->
+
+    <!-- ==================================================
+         CONTEÚDO PRINCIPAL
+    =================================================== -->
 
     <main>
+
+
+        <!-- ==================================================
+             HERO
+        =================================================== -->
 
         <section class="hero">
 
             <div class="container hero-content">
 
 
-                <!-- TEXTO -->
+                <!-- TEXTO PRINCIPAL -->
 
-                <div>
+                <div class="hero-text">
 
                     <span class="badge">
                         Acessibilidade e inclusão
@@ -199,25 +227,34 @@
                     </p>
 
 
-                    <!-- BOTÕES -->
+
+                    <!-- ==================================================
+                         BOTÕES
+                         
+                         O botão Conheça o projeto fica SOMENTE aqui.
+                    =================================================== -->
 
                     <div class="hero-buttons">
 
+
+                        <!-- VAI PARA conheca.html -->
+
                         <a
                             href="conheca.html"
-                            class="button primary">
-
+                            class="button primary"
+                        >
                             Conheça o projeto
-
                         </a>
 
 
+
+                        <!-- VAI PARA recursos.html -->
+
                         <a
                             href="recursos.html"
-                            class="button secondary">
-
+                            class="button secondary"
+                        >
                             Recursos
-
                         </a>
 
                     </div>
@@ -225,38 +262,59 @@
                 </div>
 
 
-                <!-- DESENHO DO OLHO -->
+
+                <!-- ==================================================
+                     DESENHO DO OLHO
+                =================================================== -->
 
                 <div class="hero-card">
 
                     <div class="hero-illustration">
 
-                        <svg viewBox="0 0 500 400">
+                        <svg
+                            viewBox="0 0 500 400"
+                            aria-hidden="true"
+                        >
+
+                            <!-- Fundo -->
 
                             <circle
                                 cx="250"
                                 cy="200"
                                 r="145"
-                                fill="#fce4ec"/>
+                                fill="#fce4ec"
+                            />
+
+
+                            <!-- Olho -->
 
                             <ellipse
                                 cx="250"
                                 cy="200"
                                 rx="125"
                                 ry="75"
-                                fill="white"/>
+                                fill="white"
+                            />
+
+
+                            <!-- Íris -->
 
                             <circle
                                 cx="250"
                                 cy="200"
                                 r="40"
-                                fill="#d81b60"/>
+                                fill="#d81b60"
+                            />
+
+
+                            <!-- Brilho -->
 
                             <circle
                                 cx="264"
                                 cy="185"
                                 r="10"
-                                fill="white"/>
+                                fill="white"
+                            />
 
                         </svg>
 
@@ -282,13 +340,15 @@
     </main>
 
 
-    <!-- ============================= -->
-    <!-- RODAPÉ                        -->
-    <!-- ============================= -->
+
+    <!-- ==================================================
+         RODAPÉ
+    =================================================== -->
 
     <footer>
 
         <div class="container footer-content">
+
 
             <div>
 
@@ -304,7 +364,8 @@
 
 
             <p>
-                © 2026 VisãoAcolhedora. Todos os direitos reservados.
+                © 2026 VisãoAcolhedora.
+                Todos os direitos reservados.
             </p>
 
         </div>
@@ -312,22 +373,24 @@
     </footer>
 
 
-    <!-- ============================= -->
-    <!-- VOLTAR AO TOPO                -->
-    <!-- ============================= -->
+
+    <!-- ==================================================
+         BOTÃO VOLTAR AO TOPO
+    =================================================== -->
 
     <button
         id="topButton"
-        aria-label="Voltar ao topo">
-
+        type="button"
+        aria-label="Voltar ao topo"
+    >
         ↑
-
     </button>
 
 
-    <!-- ============================= -->
-    <!-- JAVASCRIPT                    -->
-    <!-- ============================= -->
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
 
     <script src="script.js"></script>
 
